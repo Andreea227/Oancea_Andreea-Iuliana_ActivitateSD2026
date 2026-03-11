@@ -31,3 +31,12 @@ void afisare(struct Frizerie f) {
 	printf("%f ", f.costServiciu);
 	printf("\n");
 }
+
+void afisareLista(Nod* primNod)
+{
+	while (primNod != NULL)
+	{
+		afisare(primNod->frizerie);
+		primNod = primNod->next;
+	}
+}
