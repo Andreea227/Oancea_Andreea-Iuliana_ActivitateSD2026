@@ -25,3 +25,9 @@ struct Frizerie initializareFrizerie(char* fnume, int fnrMediuClienti, float fco
 
 	return f1;
 }
+void afisare(struct Frizerie f) {
+	printf("%s ", f.nume);
+	printf("%d ", f.nrMediuClienti);
+	printf("%f ", f.costServiciu);
+	printf("\n");
+}
