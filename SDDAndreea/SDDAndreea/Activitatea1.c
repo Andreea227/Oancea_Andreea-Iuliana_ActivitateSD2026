@@ -82,4 +82,12 @@ void main() {
 	pushBack(&ptr, initializareFrizerie("3rd altcevahop", 20, 20.3));
 
 	afisareLista(ptr);
+
+	while (ptr != NULL)
+	{
+		free(ptr->frizerie.nume);
+		Nod* p = ptr->next;
+		free(ptr);
+		ptr = p;
+	}
 }
