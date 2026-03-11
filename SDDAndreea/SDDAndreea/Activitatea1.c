@@ -40,3 +40,27 @@ void afisareLista(Nod* primNod)
 		primNod = primNod->next;
 	}
 }
+void pushBack(Nod** head, struct Frizerie f)
+{
+	Nod* newNod;
+	newNod = malloc(sizeof(Nod));
+	newNod->frizerie = f;
+	newNod->next = NULL;
+	if (*head != NULL)
+	{
+
+
+		Nod* p = *head;
+
+		while (p->next != NULL)
+		{
+			p = p->next;
+		}
+		p->next = newNod;
+	}
+	else
+	{
+		*head = newNod;
+
+	}
+}
