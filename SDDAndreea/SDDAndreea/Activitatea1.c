@@ -81,4 +81,5 @@ void main() {
 
 	pushBack(&ptr, initializareFrizerie("3rd altcevahop", 20, 20.3));
 
+	afisareLista(ptr);
 }
