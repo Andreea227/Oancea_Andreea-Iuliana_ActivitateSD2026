@@ -16,3 +16,12 @@ struct Nod {
 	struct Nod* next;
 
 };
+struct Frizerie initializareFrizerie(char* fnume, int fnrMediuClienti, float fcostServiciu) {
+	struct Frizerie f1;
+	f1.nume = malloc(sizeof(char) * (strlen(fnume) + 1));
+	strcpy_s(f1.nume, strlen(fnume) + 1, fnume);
+	f1.nrMediuClienti = fnrMediuClienti;
+	f1.costServiciu = fcostServiciu;
+
+	return f1;
+}
