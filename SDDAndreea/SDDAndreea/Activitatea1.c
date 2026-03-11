@@ -64,3 +64,10 @@ void pushBack(Nod** head, struct Frizerie f)
 
 	}
 }
+Nod* pushFront(Nod* ptrNod, struct Frizerie f) {
+	Nod* nod;
+	nod = malloc(sizeof(Nod));
+	nod->frizerie = f;
+	nod->next = ptrNod;
+	return nod;
+}
