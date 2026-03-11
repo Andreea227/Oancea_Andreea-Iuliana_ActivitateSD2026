@@ -79,4 +79,6 @@ void main() {
 	ptr = pushFront(ptr, f1);
 	ptr = pushFront(ptr, f2);
 
+	pushBack(&ptr, initializareFrizerie("3rd altcevahop", 20, 20.3));
+
 }
