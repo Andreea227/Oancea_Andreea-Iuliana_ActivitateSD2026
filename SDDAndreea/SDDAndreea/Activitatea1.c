@@ -71,3 +71,6 @@ Nod* pushFront(Nod* ptrNod, struct Frizerie f) {
 	nod->next = ptrNod;
 	return nod;
 }
+void main() {
+
+}
