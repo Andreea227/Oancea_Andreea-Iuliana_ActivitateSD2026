@@ -72,5 +72,6 @@ Nod* pushFront(Nod* ptrNod, struct Frizerie f) {
 	return nod;
 }
 void main() {
-
+	struct Frizerie f1 = initializareFrizerie("One Barbershop", 15, 17.2);
+	struct Frizerie f2 = initializareFrizerie("2nd Barbershop", 20, 20.3);
 }
