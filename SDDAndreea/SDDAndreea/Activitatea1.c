@@ -9,3 +9,10 @@ typedef struct Frizerie {
 	int nrMediuClienti;
 	float costServiciu;
 };
+
+typedef struct Nod Nod;
+struct Nod {
+	struct Frizerie frizerie;
+	struct Nod* next;
+
+};
