@@ -23,3 +23,24 @@ struct ListaDubla {
     Nod* prim;
     Nod* ultim;
 };
+
+Restaurant citireRestaurant(FILE* f)
+{
+    char buffer[100];
+    char sep[3] = ",\n";
+
+    fgets(buffer, 100, f);
+
+    Restaurant r;
+
+    char* aux = strtok(buffer, sep);
+    r.id = atoi(aux);
+
+    aux = strtok(NULL, sep);
+    r.nume = (char*)malloc(strlen(aux) + 1);
+    strcpy(r.nume, aux);
+
+    r.rating = atof(strtok(NULL, sep));
+
+    return r;
+}
