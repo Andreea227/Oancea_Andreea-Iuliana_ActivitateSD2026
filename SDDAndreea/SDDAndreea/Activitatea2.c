@@ -173,3 +173,23 @@ void stergeCartiDupaCategorie(Nod** cap, char categorieCautata) {
 		}
 	}
 }
+int main() {
+	Nod* cap = citireListaCartiDinFisier("carti.txt");
+	afisareListaCarti(cap);
+
+	printf("Pretul mediu: %.2f\n", calculeazaPretMediu(cap));
+	float pretTotal = calculeazaPretCartiAutor(cap, "Popescu");
+	printf("Pret total carti autor 'Popescu': %.2f\n", pretTotal);
+
+	printf("\nStergere carti categorie A:\n");
+	stergeCartiDupaCategorie(&cap, 'A');
+	afisareListaCarti(cap);
+
+	printf("\nStergere carti categorie F:\n");
+	stergeCartiDupaCategorie(&cap, 'F');
+	afisareListaCarti(cap);
+
+	dezalocareListaCarti(&cap);
+
+	return 0;
+}
