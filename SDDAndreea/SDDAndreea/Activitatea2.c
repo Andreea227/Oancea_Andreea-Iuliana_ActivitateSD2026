@@ -3,5 +3,13 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct StructuraCarte Carte;
+
 struct StructuraCarte {
+	int id;
+	int nrPagini;
+	float pret;
+	char* titlu;
+	char* autor;
+	unsigned char categorie;
 };
