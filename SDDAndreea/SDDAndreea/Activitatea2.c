@@ -58,3 +58,10 @@ void afisareCarte(Carte c) {
 	printf("Autor: %s\n", c.autor);
 	printf("Categorie: %c\n\n", c.categorie);
 }
+
+void afisareListaCarti(Nod* cap) {
+	while (cap != NULL) {
+		afisareCarte(cap->info);
+		cap = cap->next;
+	}
+}
