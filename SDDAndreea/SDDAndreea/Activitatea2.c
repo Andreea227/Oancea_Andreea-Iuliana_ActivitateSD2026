@@ -108,3 +108,15 @@ Nod* citireListaCartiDinFisier(const char* numeFisier) {
 
 	return cap;
 }
+
+void dezalocareListaCarti(Nod** cap) {
+	while (*cap) {
+		Nod* p = *cap;
+
+		*cap = p->next;
+		free(p->info.titlu);
+		free(p->info.autor);
+
+		free(p);
+	}
+}
