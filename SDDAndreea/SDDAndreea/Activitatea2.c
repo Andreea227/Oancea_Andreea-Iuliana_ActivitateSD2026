@@ -85,3 +85,13 @@ void adaugaCarteInLista(Nod** cap, Carte carteNoua) {
 		}
 	}
 }
+
+void adaugaLaInceputInLista(Nod** cap, Carte carteNoua) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+
+	if (nou != NULL) {
+		nou->info = carteNoua;
+		nou->next = *cap;
+		*cap = nou;
+	}
+}
