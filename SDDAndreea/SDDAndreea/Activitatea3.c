@@ -92,3 +92,12 @@ ListaDubla citireLista(const char* numeFisier)
 
     return lista;
 }
+
+int main()
+{
+    ListaDubla lista = citireLista("restaurant.txt");
+
+    afisareLista(lista);
+
+    return 0;
+}
