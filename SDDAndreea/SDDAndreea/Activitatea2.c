@@ -95,3 +95,16 @@ void adaugaLaInceputInLista(Nod** cap, Carte carteNoua) {
 		*cap = nou;
 	}
 }
+
+Nod* citireListaCartiDinFisier(const char* numeFisier) {
+	Nod* cap = NULL;
+	FILE* f = fopen(numeFisier, "r");
+	if (f) {
+		while (!feof(f)) {
+			adaugaCarteInLista(&cap, citireCarteDinFisier(f));
+		}
+		fclose(f);
+	}
+
+	return cap;
+}
