@@ -18,3 +18,8 @@ struct Nod {
     Nod* next;
     Nod* prev;
 };
+
+struct ListaDubla {
+    Nod* prim;
+    Nod* ultim;
+};
