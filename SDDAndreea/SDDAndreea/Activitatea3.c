@@ -74,3 +74,21 @@ void afisareLista(ListaDubla lista)
         p = p->next;
     }
 }
+
+ListaDubla citireLista(const char* numeFisier)
+{
+    FILE* f = fopen(numeFisier, "r");
+
+    ListaDubla lista;
+    lista.prim = NULL;
+    lista.ultim = NULL;
+
+    while (!feof(f))
+    {
+        adauga(&lista, citireRestaurant(f));
+    }
+
+    fclose(f);
+
+    return lista;
+}
