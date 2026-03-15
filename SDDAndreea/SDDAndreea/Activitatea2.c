@@ -19,3 +19,33 @@ struct Nod {
 	Carte info;
 	struct Nod* next;
 };
+
+Carte citireCarteDinFisier(FILE* file) {
+	char buffer[100];
+	char sep[3] = ",\n";
+	char* aux;
+	Carte c;
+
+	fgets(buffer, 100, file);
+
+	aux = strtok(buffer, sep);
+	c.id = atoi(aux);
+	c.nrPagini = atoi(strtok(NULL, sep));
+	c.pret = atof(strtok(NULL, sep));
+
+	aux = strtok(NULL, sep);
+	c.titlu = malloc(strlen(aux) + 1);
+	if (c.titlu != NULL) {
+		strcpy(c.titlu, aux);
+	}
+
+	aux = strtok(NULL, sep);
+	c.autor = malloc(strlen(aux) + 1);
+	if (c.autor != NULL) {
+		strcpy(c.autor, aux);
+	}
+
+	c.categorie = *strtok(NULL, sep);
+
+	return c;
+}
