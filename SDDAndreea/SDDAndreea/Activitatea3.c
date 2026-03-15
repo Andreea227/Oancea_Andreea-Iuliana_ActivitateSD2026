@@ -63,3 +63,14 @@ void adauga(ListaDubla* lista, Restaurant r)
         lista->ultim = nou;
     }
 }
+
+void afisareLista(ListaDubla lista)
+{
+    Nod* p = lista.prim;
+
+    while (p)
+    {
+        printf("%d %s %.2f\n", p->info.id, p->info.nume, p->info.rating);
+        p = p->next;
+    }
+}
