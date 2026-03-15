@@ -65,3 +65,23 @@ void afisareListaCarti(Nod* cap) {
 		cap = cap->next;
 	}
 }
+
+void adaugaCarteInLista(Nod** cap, Carte carteNoua) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+
+	if (nou != NULL) {
+		nou->info = carteNoua;
+		nou->next = NULL;
+
+		if (*cap) {
+			Nod* p = *cap;
+			while (p->next) {
+				p = p->next;
+			}
+			p->next = nou;
+		}
+		else {
+			*cap = nou;
+		}
+	}
+}
