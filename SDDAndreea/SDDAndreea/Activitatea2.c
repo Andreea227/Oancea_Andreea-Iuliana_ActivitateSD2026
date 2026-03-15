@@ -4,6 +4,7 @@
 #include <string.h>
 
 typedef struct StructuraCarte Carte;
+typedef struct Nod Nod;
 
 struct StructuraCarte {
 	int id;
@@ -12,4 +13,9 @@ struct StructuraCarte {
 	char* titlu;
 	char* autor;
 	unsigned char categorie;
+};
+
+struct Nod {
+	Carte info;
+	struct Nod* next;
 };
