@@ -6,3 +6,9 @@
 typedef struct Restaurant Restaurant;
 typedef struct Nod Nod;
 typedef struct ListaDubla ListaDubla;
+
+struct Restaurant {
+    int id;
+    char* nume;
+    float rating;
+};
