@@ -12,3 +12,9 @@ struct Restaurant {
     char* nume;
     float rating;
 };
+
+struct Nod {
+    Restaurant info;
+    Nod* next;
+    Nod* prev;
+};
