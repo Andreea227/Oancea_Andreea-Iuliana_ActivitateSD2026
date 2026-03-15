@@ -1,0 +1,5 @@
+1,250,45.5,Programare C,Popescu,A
+2,300,60.0,Structuri de Date,Ionescu,B
+3,150,35.2,Algoritmi Fundamentali,Popescu,F
+4,420,80.5,Baze de Date,Georgescu,A
+5,200,50.0,Programare Avansata,Popescu,C
