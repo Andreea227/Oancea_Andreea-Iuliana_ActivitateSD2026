@@ -44,3 +44,22 @@ Restaurant citireRestaurant(FILE* f)
 
     return r;
 }
+
+void adauga(ListaDubla* lista, Restaurant r)
+{
+    Nod* nou = (Nod*)malloc(sizeof(Nod));
+    nou->info = r;
+    nou->next = NULL;
+    nou->prev = NULL;
+
+    if (lista->prim == NULL)
+    {
+        lista->prim = lista->ultim = nou;
+    }
+    else
+    {
+        nou->prev = lista->ultim;
+        lista->ultim->next = nou;
+        lista->ultim = nou;
+    }
+}
