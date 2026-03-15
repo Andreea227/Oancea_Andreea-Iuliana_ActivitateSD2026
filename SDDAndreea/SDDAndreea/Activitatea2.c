@@ -133,3 +133,15 @@ float calculeazaPretMediu(Nod* cap) {
 
 	return (contor > 0) ? suma / contor : 0;
 }
+float calculeazaPretCartiAutor(Nod* cap, const char* autorCautat) {
+	float suma = 0;
+
+	while (cap) {
+		if (strcmp(cap->info.autor, autorCautat) == 0) {
+			suma += cap->info.pret;
+		}
+		cap = cap->next;
+	}
+
+	return suma;
+}
