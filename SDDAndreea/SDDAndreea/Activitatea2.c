@@ -120,3 +120,16 @@ void dezalocareListaCarti(Nod** cap) {
 		free(p);
 	}
 }
+
+float calculeazaPretMediu(Nod* cap) {
+	float suma = 0;
+	int contor = 0;
+
+	while (cap) {
+		suma += cap->info.pret;
+		contor++;
+		cap = cap->next;
+	}
+
+	return (contor > 0) ? suma / contor : 0;
+}
