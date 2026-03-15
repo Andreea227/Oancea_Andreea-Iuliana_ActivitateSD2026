@@ -145,3 +145,31 @@ float calculeazaPretCartiAutor(Nod* cap, const char* autorCautat) {
 
 	return suma;
 }
+void stergeCartiDupaCategorie(Nod** cap, char categorieCautata) {
+	while (*cap != NULL && (*cap)->info.categorie == categorieCautata) {
+		Nod* aux = *cap;
+		*cap = aux->next;
+
+		free(aux->info.titlu);
+		free(aux->info.autor);
+		free(aux);
+	}
+
+	if (*cap) {
+		Nod* p = *cap;
+
+		while (p && p->next) {
+			if (p->next->info.categorie == categorieCautata) {
+				Nod* aux = p->next;
+				p->next = aux->next;
+
+				free(aux->info.titlu);
+				free(aux->info.autor);
+				free(aux);
+			}
+			else {
+				p = p->next;
+			}
+		}
+	}
+}
