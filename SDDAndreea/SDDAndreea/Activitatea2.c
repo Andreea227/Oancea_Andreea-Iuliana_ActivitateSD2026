@@ -49,3 +49,12 @@ Carte citireCarteDinFisier(FILE* file) {
 
 	return c;
 }
+
+void afisareCarte(Carte c) {
+	printf("ID: %d\n", c.id);
+	printf("Pagini: %d\n", c.nrPagini);
+	printf("Pret: %.2f\n", c.pret);
+	printf("Titlu: %s\n", c.titlu);
+	printf("Autor: %s\n", c.autor);
+	printf("Categorie: %c\n\n", c.categorie);
+}
