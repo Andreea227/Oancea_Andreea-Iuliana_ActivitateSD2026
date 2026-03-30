@@ -45,3 +45,19 @@ void afisareCafenea(Cafenea c) {
 	printf("Cafeneaua %s are %d locuri si incasari %.2f\n",
 		c.nume, c.nrLocuri, c.incasari);
 }
+
+void inserareListDublaSfarsit(listaDubla* lista, Cafenea cafenea) {
+	nodLdi* nod = (nodLdi*)malloc(sizeof(nodLdi));
+	nod->info = InitCopiere(cafenea);
+	nod->next = NULL;
+	nod->prev = lista->ultim;
+
+	if (lista->ultim) {
+		lista->ultim->next = nod;
+	}
+	else {
+		lista->prim = nod;
+	}
+
+	lista->ultim = nod;
+}
