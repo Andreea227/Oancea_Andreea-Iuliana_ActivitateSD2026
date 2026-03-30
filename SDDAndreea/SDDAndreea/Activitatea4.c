@@ -16,3 +16,9 @@ struct nod {
 	Cafenea info;
 	Nod* next;
 };
+
+struct nodLdi {
+	Cafenea info;
+	nodLdi* next;
+	nodLdi* prev;
+};
