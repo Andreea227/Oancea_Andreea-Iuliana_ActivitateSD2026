@@ -61,3 +61,19 @@ void inserareListDublaSfarsit(listaDubla* lista, Cafenea cafenea) {
 
 	lista->ultim = nod;
 }
+
+void inserareListaDublaInceput(listaDubla* lista, Cafenea cafenea) {
+	nodLdi* nod = (nodLdi*)malloc(sizeof(nodLdi));
+	nod->info = InitCopiere(cafenea);
+	nod->prev = NULL;
+	nod->next = lista->prim;
+
+	if (lista->prim) {
+		lista->prim->prev = nod;
+	}
+	else {
+		lista->ultim = nod;
+	}
+
+	lista->prim = nod;
+}
