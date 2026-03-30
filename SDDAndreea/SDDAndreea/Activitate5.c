@@ -29,3 +29,10 @@ Masina creareMasina(int id, const char* marca, float pret) {
 void afisareMasina(Masina m) {
 	printf("ID: %d | Marca: %s | Pret: %.2f\n", m.id, m.marca, m.pret);
 }
+
+Nod* inserareInceput(Nod* cap, Masina m) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+	nou->info = m;
+	nou->next = cap;
+	return nou;
+}
