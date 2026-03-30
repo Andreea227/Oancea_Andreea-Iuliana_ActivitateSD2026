@@ -36,3 +36,7 @@ Cafenea Init(char* nume, int nrlocuri, float incasari) {
 	c.incasari = incasari;
 	return c;
 }
+
+Cafenea InitCopiere(Cafenea princ) {
+	return Init(princ.nume, princ.nrLocuri, princ.incasari);
+}
