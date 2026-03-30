@@ -122,3 +122,27 @@ void interschimba(listaDubla ld, int i1, int i2) {
 		nod2->info = temp;
 	}
 }
+
+int CalcNrElem(listaDubla ld) {
+	int i = 0;
+	nodLdi* p = ld.prim;
+	while (p) {
+		i++;
+		p = p->next;
+	}
+	return i;
+}
+
+char palindrom(listaDubla ld) {
+	int n = CalcNrElem(ld);
+	nodLdi* st = ld.prim;
+	nodLdi* dr = ld.ultim;
+
+	for (int i = 0; i < n / 2; i++) {
+		if (st->info.nrLocuri != dr->info.nrLocuri)
+			return '0';
+		st = st->next;
+		dr = dr->prev;
+	}
+	return '1';
+}
