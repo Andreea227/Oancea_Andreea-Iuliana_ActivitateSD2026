@@ -146,3 +146,34 @@ char palindrom(listaDubla ld) {
 	}
 	return '1';
 }
+
+int main() {
+	listaDubla lista;
+	lista.prim = NULL;
+	lista.ultim = NULL;
+
+	Cafenea c1 = Init("Starbucks", 40, 60);
+	Cafenea c2 = Init("Ted", 30, 43);
+
+	inserareListDublaSfarsit(&lista, c1);
+	inserareListDublaSfarsit(&lista, c2);
+
+	afisareListaDublaDeLaInceput(lista);
+
+	inserareListaDublaInceput(&lista, c1);
+	inserareListaDublaInceput(&lista, c2);
+
+	printf("------\n");
+	afisareListaDublaDeLaSfarsit(lista);
+
+	printf("\nPalindrom: %c\n", palindrom(lista));
+
+	interschimba(lista, 1, 3);
+
+	printf("Dupa interschimbare:\n");
+	afisareListaDublaDeLaInceput(lista);
+
+	stergereListaDubla(&lista);
+
+	return 0;
+}
