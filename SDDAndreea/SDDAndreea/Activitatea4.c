@@ -27,3 +27,12 @@ struct listaDubla {
 	nodLdi* prim;
 	nodLdi* ultim;
 };
+
+Cafenea Init(char* nume, int nrlocuri, float incasari) {
+	Cafenea c;
+	c.nume = (char*)malloc(strlen(nume) + 1);
+	strcpy(c.nume, nume);
+	c.nrLocuri = nrlocuri;
+	c.incasari = incasari;
+	return c;
+}
