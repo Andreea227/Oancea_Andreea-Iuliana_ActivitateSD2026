@@ -93,3 +93,15 @@ void afisareListaDublaDeLaSfarsit(listaDubla lista) {
 		p = p->prev;
 	}
 }
+
+void stergereListaDubla(listaDubla* lista) {
+	nodLdi* p = lista->prim;
+	while (p) {
+		free(p->info.nume);
+		nodLdi* temp = p->next;
+		free(p);
+		p = temp;
+	}
+	lista->prim = NULL;
+	lista->ultim = NULL;
+}
