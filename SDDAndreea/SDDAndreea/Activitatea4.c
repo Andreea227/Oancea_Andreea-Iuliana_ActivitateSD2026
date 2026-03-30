@@ -11,3 +11,8 @@ struct cafenea {
 	char* nume;
 	float incasari;
 };
+
+struct nod {
+	Cafenea info;
+	Nod* next;
+};
