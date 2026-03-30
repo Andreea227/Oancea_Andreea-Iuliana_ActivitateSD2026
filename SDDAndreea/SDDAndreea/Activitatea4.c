@@ -40,3 +40,8 @@ Cafenea Init(char* nume, int nrlocuri, float incasari) {
 Cafenea InitCopiere(Cafenea princ) {
 	return Init(princ.nume, princ.nrLocuri, princ.incasari);
 }
+
+void afisareCafenea(Cafenea c) {
+	printf("Cafeneaua %s are %d locuri si incasari %.2f\n",
+		c.nume, c.nrLocuri, c.incasari);
+}
