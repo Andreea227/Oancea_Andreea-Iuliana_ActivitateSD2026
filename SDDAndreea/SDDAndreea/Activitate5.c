@@ -36,3 +36,20 @@ Nod* inserareInceput(Nod* cap, Masina m) {
 	nou->next = cap;
 	return nou;
 }
+
+void inserareFinal(Nod** cap, Masina m) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+	nou->info = m;
+	nou->next = NULL;
+
+	if (*cap == NULL) {
+		*cap = nou;
+	}
+	else {
+		Nod* p = *cap;
+		while (p->next != NULL) {
+			p = p->next;
+		}
+		p->next = nou;
+	}
+}
