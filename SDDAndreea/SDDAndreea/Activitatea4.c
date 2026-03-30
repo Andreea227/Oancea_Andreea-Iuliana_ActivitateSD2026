@@ -22,3 +22,8 @@ struct nodLdi {
 	nodLdi* next;
 	nodLdi* prev;
 };
+
+struct listaDubla {
+	nodLdi* prim;
+	nodLdi* ultim;
+};
