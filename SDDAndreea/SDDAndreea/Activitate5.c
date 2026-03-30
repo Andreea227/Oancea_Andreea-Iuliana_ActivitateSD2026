@@ -69,3 +69,22 @@ void dezalocare(Nod** cap) {
 		free(temp);
 	}
 }
+
+int main() {
+	Nod* cap = NULL;
+
+	Masina m1 = creareMasina(1, "BMW", 20000);
+	Masina m2 = creareMasina(2, "Audi", 25000);
+	Masina m3 = creareMasina(3, "Mercedes", 30000);
+
+	cap = inserareInceput(cap, m1);
+	cap = inserareInceput(cap, m2);
+
+	inserareFinal(&cap, m3);
+
+	afisareLista(cap);
+
+	dezalocare(&cap);
+
+	return 0;
+}
