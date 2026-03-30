@@ -77,3 +77,19 @@ void inserareListaDublaInceput(listaDubla* lista, Cafenea cafenea) {
 
 	lista->prim = nod;
 }
+
+void afisareListaDublaDeLaInceput(listaDubla lista) {
+	nodLdi* p = lista.prim;
+	while (p) {
+		afisareCafenea(p->info);
+		p = p->next;
+	}
+}
+
+void afisareListaDublaDeLaSfarsit(listaDubla lista) {
+	nodLdi* p = lista.ultim;
+	while (p) {
+		afisareCafenea(p->info);
+		p = p->prev;
+	}
+}
