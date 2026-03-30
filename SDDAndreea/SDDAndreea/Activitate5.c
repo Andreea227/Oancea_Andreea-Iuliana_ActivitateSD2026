@@ -25,3 +25,7 @@ Masina creareMasina(int id, const char* marca, float pret) {
 
 	return m;
 }
+
+void afisareMasina(Masina m) {
+	printf("ID: %d | Marca: %s | Pret: %.2f\n", m.id, m.marca, m.pret);
+}
