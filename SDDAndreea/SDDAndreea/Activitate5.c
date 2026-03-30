@@ -60,3 +60,12 @@ void afisareLista(Nod* cap) {
 		cap = cap->next;
 	}
 }
+
+void dezalocare(Nod** cap) {
+	while (*cap != NULL) {
+		free((*cap)->info.marca);
+		Nod* temp = *cap;
+		*cap = (*cap)->next;
+		free(temp);
+	}
+}
