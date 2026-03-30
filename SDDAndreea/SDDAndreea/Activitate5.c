@@ -53,3 +53,10 @@ void inserareFinal(Nod** cap, Masina m) {
 		p->next = nou;
 	}
 }
+
+void afisareLista(Nod* cap) {
+	while (cap != NULL) {
+		afisareMasina(cap->info);
+		cap = cap->next;
+	}
+}
