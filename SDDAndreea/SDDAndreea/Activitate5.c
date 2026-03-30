@@ -13,3 +13,15 @@ typedef struct Nod {
 	Masina info;
 	struct Nod* next;
 } Nod;
+
+Masina creareMasina(int id, const char* marca, float pret) {
+	Masina m;
+	m.id = id;
+
+	m.marca = (char*)malloc(strlen(marca) + 1);
+	strcpy(m.marca, marca);
+
+	m.pret = pret;
+
+	return m;
+}
