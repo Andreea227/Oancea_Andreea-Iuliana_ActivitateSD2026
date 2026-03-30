@@ -105,3 +105,20 @@ void stergereListaDubla(listaDubla* lista) {
 	lista->prim = NULL;
 	lista->ultim = NULL;
 }
+
+void interschimba(listaDubla ld, int i1, int i2) {
+	nodLdi* nod1 = ld.prim;
+	nodLdi* nod2 = ld.prim;
+
+	for (int i = 1; i < i1 && nod1 != NULL; i++)
+		nod1 = nod1->next;
+
+	for (int i = 1; i < i2 && nod2 != NULL; i++)
+		nod2 = nod2->next;
+
+	if (nod1 && nod2) {
+		Cafenea temp = nod1->info;
+		nod1->info = nod2->info;
+		nod2->info = temp;
+	}
+}
