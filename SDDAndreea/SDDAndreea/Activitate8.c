@@ -117,3 +117,20 @@ void dezalocareHashTable(HashTable tabela) {
 	}
 	free(tabela.vector);
 }
+
+int main() {
+	HashTable tabela = initHashTable(4);
+
+	inserareHashTable(tabela, initAngajat("Ana", 25, 3000));
+	inserareHashTable(tabela, initAngajat("Ion", 30, 4000));
+	inserareHashTable(tabela, initAngajat("Maria", 22, 2800));
+
+	afisareHashTable(tabela);
+
+	printf("\nTotal varsta prima lista: %d",
+		calculVarstaPrimaLista(tabela));
+
+	dezalocareHashTable(tabela);
+
+	return 0;
+}
