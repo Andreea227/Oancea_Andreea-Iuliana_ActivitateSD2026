@@ -12,3 +12,8 @@ struct Carte
 	int nrPagini;
 	float pret;
 };
+
+struct Nod {
+	Carte info;
+	Nod* next;
+};
