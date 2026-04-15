@@ -82,3 +82,9 @@ void inserareHashTable(HashTable tabela, Carte c) {
 	int poz = hash(tabela.dimensiune, c.nrPagini);
 	inserareLaSfarsit(&(tabela.vector[poz]), c);
 }
+void afisareHashTable(HashTable tabela) {
+	for (int i = 0; i < tabela.dimensiune; i++) {
+		printf("\nPozitie: %d", i);
+		afisareListaCarti(tabela.vector[i]);
+	}
+}
