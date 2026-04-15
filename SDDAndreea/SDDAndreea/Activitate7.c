@@ -100,3 +100,12 @@ int calculPaginiPrimaLista(HashTable tabela) {
 
 	return total;
 }
+
+void dezalocareLista(Nod** cap) {
+	while (*cap != NULL) {
+		free((*cap)->info.titlu);
+		Nod* aux = *cap;
+		*cap = (*cap)->next;
+		free(aux);
+	}
+}
