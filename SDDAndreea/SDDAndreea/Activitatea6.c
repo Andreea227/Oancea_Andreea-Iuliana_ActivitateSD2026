@@ -85,3 +85,10 @@ void inserareHashTable(HashTable tabela, Produs p) {
 		}
 	}
 }
+
+void afisareHashTable(HashTable tabela) {
+	for (int i = 0; i < tabela.dimensiune; i++) {
+		printf("\nPozitie: %d", i);
+		afisareListaProduse(tabela.vector[i]);
+	}
+}
