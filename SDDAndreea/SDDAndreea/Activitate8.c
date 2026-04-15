@@ -38,3 +38,9 @@ void afisareAngajat(Angajat a) {
 	printf("\nAngajatul %s are %d ani si salariul %.2f lei!",
 		a.nume, a.varsta, a.salariu);
 }
+void afisareListaAngajati(Nod* cap) {
+	while (cap != NULL) {
+		afisareAngajat(cap->info);
+		cap = cap->next;
+	}
+}
