@@ -38,3 +38,9 @@ void afisareCarte(Carte c) {
 	printf("\nCartea %s are %d pagini si costa %.2f lei!",
 		c.titlu, c.nrPagini, c.pret);
 }
+void afisareListaCarti(Nod* cap) {
+	while (cap != NULL) {
+		afisareCarte(cap->info);
+		cap = cap->next;
+	}
+}
