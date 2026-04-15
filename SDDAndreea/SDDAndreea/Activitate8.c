@@ -33,3 +33,8 @@ Angajat initAngajat(const char* nume, int varsta, float salariu) {
 
 	return a;
 }
+
+void afisareAngajat(Angajat a) {
+	printf("\nAngajatul %s are %d ani si salariul %.2f lei!",
+		a.nume, a.varsta, a.salariu);
+}
