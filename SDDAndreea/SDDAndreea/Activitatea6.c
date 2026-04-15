@@ -74,3 +74,6 @@ HashTable initHashTable(int size) {
 
 	return tabela;
 }
+int hash(int dim, int stoc) {
+	return stoc % dim;
+}
