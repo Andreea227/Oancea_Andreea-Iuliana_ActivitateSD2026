@@ -89,3 +89,15 @@ void afisareHashTable(HashTable tabela) {
 		afisareListaAngajati(tabela.vector[i]);
 	}
 }
+
+int calculVarstaPrimaLista(HashTable tabela) {
+	int total = 0;
+	Nod* cap = tabela.vector[0];
+
+	while (cap != NULL) {
+		total += cap->info.varsta;
+		cap = cap->next;
+	}
+
+	return total;
+}
