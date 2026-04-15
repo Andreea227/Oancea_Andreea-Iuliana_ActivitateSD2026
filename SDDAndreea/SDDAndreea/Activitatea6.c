@@ -92,3 +92,14 @@ void afisareHashTable(HashTable tabela) {
 		afisareListaProduse(tabela.vector[i]);
 	}
 }
+
+int calculStocPrimaLista(HashTable tabela) {
+	int total = 0;
+	Nod* capLista0 = tabela.vector[0];
+	while (capLista0 != NULL) {
+		total += capLista0->info.stoc;
+		capLista0 = capLista0->next;
+	}
+
+	return total;
+}
