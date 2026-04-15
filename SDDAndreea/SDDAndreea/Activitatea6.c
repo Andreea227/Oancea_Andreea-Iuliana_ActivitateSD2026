@@ -64,4 +64,13 @@ void inserareLaSfarsit(Nod** cap, Produs p) {
 		aux->next = nou;
 	}
 }
+HashTable initHashTable(int size) {
+	HashTable tabela;
+	tabela.dimensiune = size;
+	tabela.vector = (Nod**)malloc(sizeof(Nod*) * size);
+	for (int i = 0; i < size; i++) {
+		tabela.vector[i] = NULL;
+	}
 
+	return tabela;
+}
