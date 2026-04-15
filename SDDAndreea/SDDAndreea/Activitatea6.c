@@ -103,3 +103,12 @@ int calculStocPrimaLista(HashTable tabela) {
 
 	return total;
 }
+
+void dezalocareLista(Nod** cap) {
+	while ((*cap) != NULL) {
+		free((*cap)->info.denumire);
+		Nod* copie = *cap;
+		*cap = (*cap)->next;
+		free(copie);
+	}
+}
