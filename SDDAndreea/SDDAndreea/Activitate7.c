@@ -33,3 +33,8 @@ Carte initCarte(const char* titlu, int nrPagini, float pret) {
 
 	return c;
 }
+
+void afisareCarte(Carte c) {
+	printf("\nCartea %s are %d pagini si costa %.2f lei!",
+		c.titlu, c.nrPagini, c.pret);
+}
