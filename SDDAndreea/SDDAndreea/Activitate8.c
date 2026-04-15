@@ -77,3 +77,8 @@ HashTable initHashTable(int size) {
 int hash(int dim, int varsta) {
 	return varsta % dim;
 }
+
+void inserareHashTable(HashTable tabela, Angajat a) {
+	int poz = hash(tabela.dimensiune, a.varsta);
+	inserareLaSfarsit(&(tabela.vector[poz]), a);
+}
