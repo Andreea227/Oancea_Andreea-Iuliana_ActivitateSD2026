@@ -23,3 +23,13 @@ struct HashTable
 	int dimensiune;
 	Nod** vector;
 };
+
+Carte initCarte(const char* titlu, int nrPagini, float pret) {
+	Carte c;
+	c.nrPagini = nrPagini;
+	c.pret = pret;
+	c.titlu = (char*)malloc(sizeof(char) * (strlen(titlu) + 1));
+	strcpy(c.titlu, titlu);
+
+	return c;
+}
