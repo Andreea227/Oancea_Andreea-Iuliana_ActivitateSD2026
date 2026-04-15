@@ -13,3 +13,9 @@ struct Produs
 	float pret;
 };
 
+struct Nod {
+	Produs info;
+	Nod* next;
+};
+
+
