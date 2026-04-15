@@ -24,3 +24,16 @@ struct HashTable
 	Nod** vector;
 };
 
+Produs initProdus(const char* denumire, int stoc,
+	float pret) {
+	Produs p;
+	p.stoc = stoc;
+	p.pret = pret;
+	p.denumire = (char*)malloc(sizeof(char)
+		* (strlen(denumire) + 1));
+	strcpy(p.denumire, denumire);
+
+	return p;
+}
+
+
