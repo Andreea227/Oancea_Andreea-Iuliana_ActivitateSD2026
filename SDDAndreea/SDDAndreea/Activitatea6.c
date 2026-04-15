@@ -36,4 +36,9 @@ Produs initProdus(const char* denumire, int stoc,
 	return p;
 }
 
+void afisareProdus(Produs p) {
+	printf("\nProdusul %s are %d bucati in stoc, iar pretul este %.2f lei!",
+		p.denumire, p.stoc, p.pret);
+}
+
 
