@@ -17,3 +17,9 @@ struct Nod {
 	Angajat info;
 	Nod* next;
 };
+
+struct HashTable
+{
+	int dimensiune;
+	Nod** vector;
+};
