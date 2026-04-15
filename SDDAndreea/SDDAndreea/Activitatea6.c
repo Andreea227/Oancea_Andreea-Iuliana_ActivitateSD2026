@@ -47,5 +47,21 @@ void afisareListaProduse(Nod* cap) {
 		cap = cap->next;
 	}
 }
+void inserareLaSfarsit(Nod** cap, Produs p) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+	nou->next = NULL;
+	nou->info = p;
 
+	if (*cap == NULL) {
+		*cap = nou;
+	}
+	else
+	{
+		Nod* aux = *cap;
+		while (aux->next != NULL) {
+			aux = aux->next;
+		}
+		aux->next = nou;
+	}
+}
 
