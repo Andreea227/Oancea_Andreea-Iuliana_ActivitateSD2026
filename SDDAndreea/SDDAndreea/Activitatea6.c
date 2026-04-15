@@ -120,3 +120,19 @@ void dezalocareHashTable(HashTable tabela) {
 	}
 	free(tabela.vector);
 }
+int main() {
+	HashTable tabela = initHashTable(4);
+
+	inserareHashTable(tabela, initProdus("Laptop", 10, 3500));
+	inserareHashTable(tabela, initProdus("Telefon", 15, 2000));
+	inserareHashTable(tabela, initProdus("Mouse", 8, 150));
+
+	afisareHashTable(tabela);
+
+	printf("\nStocul total din prima lista este: %d!",
+		calculStocPrimaLista(tabela));
+
+	dezalocareHashTable(tabela);
+
+	return 0;
+}
