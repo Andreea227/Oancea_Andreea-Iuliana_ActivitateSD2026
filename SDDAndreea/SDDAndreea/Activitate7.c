@@ -4,4 +4,11 @@
 
 typedef struct Carte Carte;
 typedef struct Nod Nod;
-typedef struct HashTable HashTable;
+typedef struct HashTable HashTable; 
+
+struct Carte
+{
+	char* titlu;
+	int nrPagini;
+	float pret;
+};
