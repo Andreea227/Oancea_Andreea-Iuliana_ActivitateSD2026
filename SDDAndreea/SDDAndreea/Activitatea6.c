@@ -41,4 +41,11 @@ void afisareProdus(Produs p) {
 		p.denumire, p.stoc, p.pret);
 }
 
+void afisareListaProduse(Nod* cap) {
+	while (cap != NULL) {
+		afisareProdus(cap->info);
+		cap = cap->next;
+	}
+}
+
 
