@@ -88,3 +88,15 @@ void afisareHashTable(HashTable tabela) {
 		afisareListaCarti(tabela.vector[i]);
 	}
 }
+
+int calculPaginiPrimaLista(HashTable tabela) {
+	int total = 0;
+	Nod* cap = tabela.vector[0];
+
+	while (cap != NULL) {
+		total += cap->info.nrPagini;
+		cap = cap->next;
+	}
+
+	return total;
+}
