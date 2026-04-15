@@ -82,3 +82,10 @@ void inserareHashTable(HashTable tabela, Angajat a) {
 	int poz = hash(tabela.dimensiune, a.varsta);
 	inserareLaSfarsit(&(tabela.vector[poz]), a);
 }
+
+void afisareHashTable(HashTable tabela) {
+	for (int i = 0; i < tabela.dimensiune; i++) {
+		printf("\nPozitie: %d", i);
+		afisareListaAngajati(tabela.vector[i]);
+	}
+}
