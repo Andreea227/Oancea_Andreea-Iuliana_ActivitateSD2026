@@ -116,3 +116,20 @@ void dezalocareHashTable(HashTable tabela) {
 	}
 	free(tabela.vector);
 }
+
+int main() {
+	HashTable tabela = initHashTable(4);
+
+	inserareHashTable(tabela, initCarte("C", 200, 50));
+	inserareHashTable(tabela, initCarte("Java", 350, 80));
+	inserareHashTable(tabela, initCarte("Python", 150, 60));
+
+	afisareHashTable(tabela);
+
+	printf("\nTotal pagini prima lista: %d",
+		calculPaginiPrimaLista(tabela));
+
+	dezalocareHashTable(tabela);
+
+	return 0;
+}
