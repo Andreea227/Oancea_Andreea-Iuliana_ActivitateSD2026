@@ -12,3 +12,8 @@ struct Angajat
 	int varsta;
 	float salariu;
 };
+
+struct Nod {
+	Angajat info;
+	Nod* next;
+};
