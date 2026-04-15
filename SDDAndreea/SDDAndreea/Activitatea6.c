@@ -112,3 +112,11 @@ void dezalocareLista(Nod** cap) {
 		free(copie);
 	}
 }
+
+void dezalocareHashTable(HashTable tabela) {
+	for (int i = 0; i < tabela.dimensiune; i++)
+	{
+		dezalocareLista(&(tabela.vector[i]));
+	}
+	free(tabela.vector);
+}
