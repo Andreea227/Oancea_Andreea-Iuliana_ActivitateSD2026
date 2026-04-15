@@ -5,3 +5,11 @@
 typedef struct Produs Produs;
 typedef struct Nod Nod;
 typedef struct HashTable HashTable;
+
+struct Produs
+{
+	char* denumire;
+	int stoc;
+	float pret;
+};
+
