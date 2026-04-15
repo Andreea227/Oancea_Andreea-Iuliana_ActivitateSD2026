@@ -77,3 +77,11 @@ HashTable initHashTable(int size) {
 int hash(int dim, int stoc) {
 	return stoc % dim;
 }
+void inserareHashTable(HashTable tabela, Produs p) {
+	if (tabela.dimensiune > 0) {
+		int pozitie = hash(tabela.dimensiune, p.stoc);
+		if (pozitie >= 0 && pozitie < tabela.dimensiune) {
+			inserareLaSfarsit(&(tabela.vector[pozitie]), p);
+		}
+	}
+}
