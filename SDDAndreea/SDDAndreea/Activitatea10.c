@@ -39,3 +39,13 @@ void citireFisier(const char* numeFisier) {
 
 	fclose(f);
 }
+
+void scriereFisier(const char* numeFisier) {
+	FILE* f = fopen(numeFisier, "w");
+
+	fprintf(f, "Laptop 10 3500\n");
+	fprintf(f, "Telefon 5 2000\n");
+	fprintf(f, "Mouse 20 150\n");
+
+	fclose(f);
+}
