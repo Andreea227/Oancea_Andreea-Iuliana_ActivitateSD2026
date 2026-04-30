@@ -33,3 +33,8 @@ Apartament initApartament(const char* adresa, int suprafata, float pret) {
 
 	return a;
 }
+
+void afisareApartament(Apartament a) {
+	printf("\nApartamentul de la %s are %d mp si costa %.2f euro!",
+		a.adresa, a.suprafata, a.pret);
+}
