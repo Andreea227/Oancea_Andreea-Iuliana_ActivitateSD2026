@@ -23,3 +23,13 @@ struct HashTable
 	int dimensiune;
 	Nod** vector;
 };
+
+Apartament initApartament(const char* adresa, int suprafata, float pret) {
+	Apartament a;
+	a.suprafata = suprafata;
+	a.pret = pret;
+	a.adresa = (char*)malloc(sizeof(char) * (strlen(adresa) + 1));
+	strcpy(a.adresa, adresa);
+
+	return a;
+}
