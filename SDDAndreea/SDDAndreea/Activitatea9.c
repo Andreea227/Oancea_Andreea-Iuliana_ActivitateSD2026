@@ -38,3 +38,10 @@ void afisareApartament(Apartament a) {
 	printf("\nApartamentul de la %s are %d mp si costa %.2f euro!",
 		a.adresa, a.suprafata, a.pret);
 }
+
+void afisareLista(Nod* cap) {
+	while (cap != NULL) {
+		afisareApartament(cap->info);
+		cap = cap->next;
+	}
+}
