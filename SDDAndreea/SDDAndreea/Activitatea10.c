@@ -18,3 +18,8 @@ Articol initArticol(const char* nume, int cantitate, float pret) {
 
 	return a;
 }
+
+void afisareArticol(Articol a) {
+	printf("\n%s - cantitate: %d - pret: %.2f",
+		a.nume, a.cantitate, a.pret);
+}
