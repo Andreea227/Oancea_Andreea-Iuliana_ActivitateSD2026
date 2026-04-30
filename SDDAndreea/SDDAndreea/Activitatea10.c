@@ -49,3 +49,13 @@ void scriereFisier(const char* numeFisier) {
 
 	fclose(f);
 }
+
+int main() {
+
+	scriereFisier("articole.txt");
+
+	printf("\nCitire din fisier:");
+	citireFisier("articole.txt");
+
+	return 0;
+}
