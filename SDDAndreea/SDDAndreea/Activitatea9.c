@@ -90,3 +90,15 @@ void afisareHashTable(HashTable tabela) {
 		afisareLista(tabela.vector[i]);
 	}
 }
+
+int calculSuprafataPrimaLista(HashTable tabela) {
+	int total = 0;
+	Nod* cap = tabela.vector[0];
+
+	while (cap != NULL) {
+		total += cap->info.suprafata;
+		cap = cap->next;
+	}
+
+	return total;
+}
