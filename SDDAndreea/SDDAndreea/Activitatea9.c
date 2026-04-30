@@ -74,3 +74,7 @@ HashTable initHashTable(int dim) {
 
 	return tabela;
 }
+
+int hash(int dim, int suprafata) {
+	return suprafata % dim;
+}
