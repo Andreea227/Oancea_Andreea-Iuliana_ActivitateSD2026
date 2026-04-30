@@ -83,3 +83,10 @@ void inserareHashTable(HashTable tabela, Apartament a) {
 	int poz = hash(tabela.dimensiune, a.suprafata);
 	inserareLaSfarsit(&(tabela.vector[poz]), a);
 }
+
+void afisareHashTable(HashTable tabela) {
+	for (int i = 0; i < tabela.dimensiune; i++) {
+		printf("\nPozitie: %d", i);
+		afisareLista(tabela.vector[i]);
+	}
+}
