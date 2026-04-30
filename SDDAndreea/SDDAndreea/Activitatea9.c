@@ -102,3 +102,12 @@ int calculSuprafataPrimaLista(HashTable tabela) {
 
 	return total;
 }
+
+void dezalocareLista(Nod** cap) {
+	while (*cap != NULL) {
+		free((*cap)->info.adresa);
+		Nod* aux = *cap;
+		*cap = (*cap)->next;
+		free(aux);
+	}
+}
