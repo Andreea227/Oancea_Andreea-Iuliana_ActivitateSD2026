@@ -78,3 +78,8 @@ HashTable initHashTable(int dim) {
 int hash(int dim, int suprafata) {
 	return suprafata % dim;
 }
+
+void inserareHashTable(HashTable tabela, Apartament a) {
+	int poz = hash(tabela.dimensiune, a.suprafata);
+	inserareLaSfarsit(&(tabela.vector[poz]), a);
+}
