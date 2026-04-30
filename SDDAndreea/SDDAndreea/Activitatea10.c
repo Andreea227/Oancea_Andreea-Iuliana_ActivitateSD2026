@@ -23,3 +23,19 @@ void afisareArticol(Articol a) {
 	printf("\n%s - cantitate: %d - pret: %.2f",
 		a.nume, a.cantitate, a.pret);
 }
+
+void citireFisier(const char* numeFisier) {
+	FILE* f = fopen(numeFisier, "r");
+
+	char buffer[50];
+	int cant;
+	float pret;
+
+	while (fscanf(f, "%s %d %f", buffer, &cant, &pret) == 3) {
+		Articol a = initArticol(buffer, cant, pret);
+		afisareArticol(a);
+		free(a.nume);
+	}
+
+	fclose(f);
+}
