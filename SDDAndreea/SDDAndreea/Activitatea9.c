@@ -62,3 +62,15 @@ void inserareLaSfarsit(Nod** cap, Apartament a) {
 		aux->next = nou;
 	}
 }
+
+HashTable initHashTable(int dim) {
+	HashTable tabela;
+	tabela.dimensiune = dim;
+	tabela.vector = (Nod**)malloc(sizeof(Nod*) * dim);
+
+	for (int i = 0; i < dim; i++) {
+		tabela.vector[i] = NULL;
+	}
+
+	return tabela;
+}
