@@ -118,3 +118,20 @@ void dezalocareHashTable(HashTable tabela) {
 	}
 	free(tabela.vector);
 }
+
+int main() {
+	HashTable tabela = initHashTable(4);
+
+	inserareHashTable(tabela, initApartament("Bucuresti", 60, 90000));
+	inserareHashTable(tabela, initApartament("Cluj", 80, 120000));
+	inserareHashTable(tabela, initApartament("Iasi", 50, 70000));
+
+	afisareHashTable(tabela);
+
+	printf("\nSuprafata totala din prima lista: %d",
+		calculSuprafataPrimaLista(tabela));
+
+	dezalocareHashTable(tabela);
+
+	return 0;
+}
