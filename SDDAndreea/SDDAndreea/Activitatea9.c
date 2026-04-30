@@ -12,3 +12,8 @@ struct Apartament
 	int suprafata;
 	float pret;
 };
+
+struct Nod {
+	Apartament info;
+	Nod* next;
+};
