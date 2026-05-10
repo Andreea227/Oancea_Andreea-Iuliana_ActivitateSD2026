@@ -157,3 +157,17 @@ void dezalocareHeap(Heap* heap) {
 	heap->lungime = 0;
 	heap->nrElemente = 0;
 }
+
+char* getNextCarModel(Heap heap) {
+
+	for (int i = 0; i < 6; i++) {
+		Masina m = extrageMasina(&heap);
+	}
+
+	if (heap.nrElemente > 0) {
+		return heap.masini[0].model;
+	}
+	else {
+		return "";
+	}
+}
