@@ -70,3 +70,33 @@ Heap initializareHeap(int lungime) {
 
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.angajati[pozMin].salariu > heap.angajati[pozSt].salariu) {
+
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.angajati[pozMin].salariu > heap.angajati[pozDr].salariu) {
+
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+
+		Angajat aux = heap.angajati[pozMin];
+		heap.angajati[pozMin] = heap.angajati[pozitieNod];
+		heap.angajati[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
