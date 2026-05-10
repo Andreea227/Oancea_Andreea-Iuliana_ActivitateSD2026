@@ -49,3 +49,13 @@ Angajat citireAngajatDinFisier(FILE* file) {
 
 	return a;
 }
+
+void afisareAngajat(Angajat angajat) {
+
+	printf("Id: %d\n", angajat.id);
+	printf("Varsta: %d\n", angajat.varsta);
+	printf("Salariu: %.2f\n", angajat.salariu);
+	printf("Nume: %s\n", angajat.nume);
+	printf("Departament: %s\n", angajat.departament);
+	printf("Nivel: %c\n\n", angajat.nivel);
+}
