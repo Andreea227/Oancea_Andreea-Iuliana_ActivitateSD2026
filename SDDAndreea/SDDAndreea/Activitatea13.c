@@ -70,3 +70,33 @@ Heap initializareHeap(int lungime) {
 
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.studenti[pozMin].medie > heap.studenti[pozSt].medie) {
+
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.studenti[pozMin].medie > heap.studenti[pozDr].medie) {
+
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+
+		Student aux = heap.studenti[pozMin];
+		heap.studenti[pozMin] = heap.studenti[pozitieNod];
+		heap.studenti[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
