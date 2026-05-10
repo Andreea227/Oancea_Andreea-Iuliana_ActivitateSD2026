@@ -137,3 +137,27 @@ void afiseazaElementeAscunse(Heap heap) {
 		afisareAngajat(heap.angajati[i]);
 	}
 }
+
+Angajat extrageAngajat(Heap* heap) {
+
+	Angajat angajat;
+	angajat.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		angajat = heap->angajati[0];
+
+		heap->angajati[0] =
+			heap->angajati[heap->nrElemente - 1];
+
+		heap->angajati[heap->nrElemente - 1] = angajat;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return angajat;
+}
