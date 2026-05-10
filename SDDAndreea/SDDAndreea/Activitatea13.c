@@ -137,3 +137,27 @@ void afiseazaElementeAscunse(Heap heap) {
 		afisareStudent(heap.studenti[i]);
 	}
 }
+
+Student extrageStudent(Heap* heap) {
+
+	Student student;
+	student.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		student = heap->studenti[0];
+
+		heap->studenti[0] =
+			heap->studenti[heap->nrElemente - 1];
+
+		heap->studenti[heap->nrElemente - 1] = student;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return student;
+}
