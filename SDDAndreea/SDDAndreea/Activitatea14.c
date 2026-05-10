@@ -176,3 +176,22 @@ void dezalocareHeap(Heap* heap) {
 	heap->lungime = 0;
 	heap->nrElemente = 0;
 }
+
+int main() {
+
+	Heap heap = citireHeapDinFisier("angajati.txt");
+
+	afisareHeap(heap);
+
+	printf("Extragere angajati:\n");
+
+	afisareAngajat(extrageAngajat(&heap));
+	afisareAngajat(extrageAngajat(&heap));
+
+	printf("Heap ramas:\n");
+	afisareHeap(heap);
+
+	dezalocareHeap(&heap);
+
+	return 0;
+}
