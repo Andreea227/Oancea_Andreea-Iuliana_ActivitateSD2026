@@ -137,3 +137,27 @@ void afiseazaElementeAscunse(Heap heap) {
 		afisareFilm(heap.filme[i]);
 	}
 }
+
+Film extrageFilm(Heap* heap) {
+
+	Film film;
+	film.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		film = heap->filme[0];
+
+		heap->filme[0] =
+			heap->filme[heap->nrElemente - 1];
+
+		heap->filme[heap->nrElemente - 1] = film;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return film;
+}
