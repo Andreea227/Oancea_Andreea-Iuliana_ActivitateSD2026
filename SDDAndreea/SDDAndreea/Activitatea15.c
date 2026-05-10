@@ -59,3 +59,14 @@ void afisareFilm(Film film) {
 	printf("Regizor: %s\n", film.regizor);
 	printf("Categorie: %c\n\n", film.categorie);
 }
+
+Heap initializareHeap(int lungime) {
+
+	Heap heap;
+
+	heap.lungime = lungime;
+	heap.filme = malloc(sizeof(Film) * lungime);
+	heap.nrElemente = 0;
+
+	return heap;
+}
