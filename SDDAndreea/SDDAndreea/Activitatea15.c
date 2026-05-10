@@ -123,3 +123,17 @@ Heap citireHeapDinFisier(const char* numeFisier) {
 
 	return heap;
 }
+
+void afisareHeap(Heap heap) {
+
+	for (int i = 0; i < heap.nrElemente; i++) {
+		afisareFilm(heap.filme[i]);
+	}
+}
+
+void afiseazaElementeAscunse(Heap heap) {
+
+	for (int i = heap.nrElemente; i < heap.lungime; i++) {
+		afisareFilm(heap.filme[i]);
+	}
+}
