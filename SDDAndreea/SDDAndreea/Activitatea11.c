@@ -109,3 +109,15 @@ Heap citireHeapDeMasiniDinFisier(const char* numeFisier) {
 
 	return heap;
 }
+
+void afisareHeap(Heap heap) {
+	for (int i = 0; i < heap.nrElemente; i++) {
+		afisareMasina(heap.masini[i]);
+	}
+}
+
+void afiseazaHeapAscuns(Heap heap) {
+	for (int i = heap.nrElemente; i < heap.lungime; i++) {
+		afisareMasina(heap.masini[i]);
+	}
+}
