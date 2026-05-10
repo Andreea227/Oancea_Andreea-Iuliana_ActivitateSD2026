@@ -53,3 +53,11 @@ void afisareMasina(Masina masina) {
 	printf("Nume sofer: %s\n", masina.numeSofer);
 	printf("Serie: %c\n\n", masina.serie);
 }
+
+Heap initializareHeap(int lungime) {
+	Heap heap;
+	heap.lungime = lungime;
+	heap.masini = malloc(sizeof(Masina) * lungime);
+	heap.nrElemente = 0;
+	return heap;
+}
