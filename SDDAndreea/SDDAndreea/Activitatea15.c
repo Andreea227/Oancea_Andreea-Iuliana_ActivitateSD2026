@@ -176,3 +176,22 @@ void dezalocareHeap(Heap* heap) {
 	heap->lungime = 0;
 	heap->nrElemente = 0;
 }
+
+int main() {
+
+	Heap heap = citireHeapDinFisier("filme.txt");
+
+	afisareHeap(heap);
+
+	printf("Extragere filme:\n");
+
+	afisareFilm(extrageFilm(&heap));
+	afisareFilm(extrageFilm(&heap));
+
+	printf("Heap ramas:\n");
+	afisareHeap(heap);
+
+	dezalocareHeap(&heap);
+
+	return 0;
+}
