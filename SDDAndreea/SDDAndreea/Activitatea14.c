@@ -59,3 +59,14 @@ void afisareAngajat(Angajat angajat) {
 	printf("Departament: %s\n", angajat.departament);
 	printf("Nivel: %c\n\n", angajat.nivel);
 }
+
+Heap initializareHeap(int lungime) {
+
+	Heap heap;
+
+	heap.lungime = lungime;
+	heap.angajati = malloc(sizeof(Angajat) * lungime);
+	heap.nrElemente = 0;
+
+	return heap;
+}
