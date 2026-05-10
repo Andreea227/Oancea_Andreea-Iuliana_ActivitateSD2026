@@ -171,3 +171,27 @@ char* getNextCarModel(Heap heap) {
 		return "";
 	}
 }
+
+int main() {
+
+	Heap heap = citireHeapDeMasiniDinFisier("masini.txt");
+
+	afisareHeap(heap);
+
+	printf("Extrageri:\n");
+
+	afisareMasina(extrageMasina(&heap));
+	afisareMasina(extrageMasina(&heap));
+	afisareMasina(extrageMasina(&heap));
+	afisareMasina(extrageMasina(&heap));
+
+	printf("Heap ramas vizibil:\n");
+	afisareHeap(heap);
+
+	printf("Elemente ascunse:\n");
+	afiseazaHeapAscuns(heap);
+
+	dezalocareHeap(&heap);
+
+	return 0;
+}
