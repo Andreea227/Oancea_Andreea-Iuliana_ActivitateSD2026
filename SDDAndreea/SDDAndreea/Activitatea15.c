@@ -161,3 +161,18 @@ Film extrageFilm(Heap* heap) {
 
 	return film;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+
+		free(heap->filme[i].titlu);
+		free(heap->filme[i].regizor);
+	}
+
+	free(heap->filme);
+
+	heap->filme = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
