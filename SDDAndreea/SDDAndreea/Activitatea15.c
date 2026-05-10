@@ -49,3 +49,13 @@ Film citireFilmDinFisier(FILE* file) {
 
 	return f;
 }
+
+void afisareFilm(Film film) {
+
+	printf("Id: %d\n", film.id);
+	printf("Durata: %d\n", film.durata);
+	printf("Rating: %.2f\n", film.rating);
+	printf("Titlu: %s\n", film.titlu);
+	printf("Regizor: %s\n", film.regizor);
+	printf("Categorie: %c\n\n", film.categorie);
+}
