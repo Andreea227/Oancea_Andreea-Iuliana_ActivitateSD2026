@@ -61,3 +61,29 @@ Heap initializareHeap(int lungime) {
 	heap.nrElemente = 0;
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.masini[pozMin].pret > heap.masini[pozSt].pret) {
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.masini[pozMin].pret > heap.masini[pozDr].pret) {
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+		Masina aux = heap.masini[pozMin];
+		heap.masini[pozMin] = heap.masini[pozitieNod];
+		heap.masini[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
