@@ -44,3 +44,12 @@ Masina citireMasinaDinFisier(FILE* file) {
 
 	return m1;
 }
+
+void afisareMasina(Masina masina) {
+	printf("Id: %d\n", masina.id);
+	printf("Nr. usi : %d\n", masina.nrUsi);
+	printf("Pret: %.2f\n", masina.pret);
+	printf("Model: %s\n", masina.model);
+	printf("Nume sofer: %s\n", masina.numeSofer);
+	printf("Serie: %c\n\n", masina.serie);
+}
