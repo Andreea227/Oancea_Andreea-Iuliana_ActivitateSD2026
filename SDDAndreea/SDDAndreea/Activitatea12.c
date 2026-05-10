@@ -137,3 +137,27 @@ void afiseazaElementeAscunse(Heap heap) {
 		afisareProdus(heap.produse[i]);
 	}
 }
+
+Produs extrageProdus(Heap* heap) {
+
+	Produs produs;
+	produs.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		produs = heap->produse[0];
+
+		heap->produse[0] =
+			heap->produse[heap->nrElemente - 1];
+
+		heap->produse[heap->nrElemente - 1] = produs;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return produs;
+}
