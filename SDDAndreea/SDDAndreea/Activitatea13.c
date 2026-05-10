@@ -19,3 +19,33 @@ struct Heap {
 	int nrElemente;
 };
 typedef struct Heap Heap;
+
+Student citireStudentDinFisier(FILE* file) {
+
+	char buffer[100];
+	char sep[3] = ",\n";
+
+	fgets(buffer, 100, file);
+
+	char* aux;
+	Student s;
+
+	aux = strtok(buffer, sep);
+	s.id = atoi(aux);
+
+	s.varsta = atoi(strtok(NULL, sep));
+
+	s.medie = atof(strtok(NULL, sep));
+
+	aux = strtok(NULL, sep);
+	s.nume = malloc(strlen(aux) + 1);
+	strcpy_s(s.nume, strlen(aux) + 1, aux);
+
+	aux = strtok(NULL, sep);
+	s.facultate = malloc(strlen(aux) + 1);
+	strcpy_s(s.facultate, strlen(aux) + 1, aux);
+
+	s.grupa = *strtok(NULL, sep);
+
+	return s;
+}
