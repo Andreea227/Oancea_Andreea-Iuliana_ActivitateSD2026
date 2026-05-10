@@ -59,3 +59,14 @@ void afisareProdus(Produs produs) {
 	printf("Producator: %s\n", produs.producator);
 	printf("Categorie: %c\n\n", produs.categorie);
 }
+
+Heap initializareHeap(int lungime) {
+
+	Heap heap;
+
+	heap.lungime = lungime;
+	heap.produse = malloc(sizeof(Produs) * lungime);
+	heap.nrElemente = 0;
+
+	return heap;
+}
