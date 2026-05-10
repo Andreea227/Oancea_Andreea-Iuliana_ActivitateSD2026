@@ -161,3 +161,18 @@ Produs extrageProdus(Heap* heap) {
 
 	return produs;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+
+		free(heap->produse[i].denumire);
+		free(heap->produse[i].producator);
+	}
+
+	free(heap->produse);
+
+	heap->produse = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
