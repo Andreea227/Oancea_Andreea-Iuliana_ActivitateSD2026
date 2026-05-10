@@ -87,3 +87,25 @@ void filtreazaHeap(Heap heap, int pozitieNod) {
 		}
 	}
 }
+
+Heap citireHeapDeMasiniDinFisier(const char* numeFisier) {
+	Heap heap = initializareHeap(10);
+	heap.nrElemente = 0;
+
+	FILE* f = fopen(numeFisier, "r");
+
+	if (f) {
+		while (!feof(f)) {
+			heap.masini[heap.nrElemente++] =
+				citireMasinaDinFisier(f);
+		}
+	}
+
+	fclose(f);
+
+	for (int i = (heap.nrElemente - 2) / 2; i >= 0; i--) {
+		filtreazaHeap(heap, i);
+	}
+
+	return heap;
+}
