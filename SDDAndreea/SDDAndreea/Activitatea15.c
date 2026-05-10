@@ -70,3 +70,33 @@ Heap initializareHeap(int lungime) {
 
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.filme[pozMin].rating > heap.filme[pozSt].rating) {
+
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.filme[pozMin].rating > heap.filme[pozDr].rating) {
+
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+
+		Film aux = heap.filme[pozMin];
+		heap.filme[pozMin] = heap.filme[pozitieNod];
+		heap.filme[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
