@@ -161,3 +161,18 @@ Angajat extrageAngajat(Heap* heap) {
 
 	return angajat;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+
+		free(heap->angajati[i].nume);
+		free(heap->angajati[i].departament);
+	}
+
+	free(heap->angajati);
+
+	heap->angajati = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
