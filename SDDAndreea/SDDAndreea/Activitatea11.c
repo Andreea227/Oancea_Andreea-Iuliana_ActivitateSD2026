@@ -144,3 +144,16 @@ Masina extrageMasina(Heap* heap) {
 
 	return masina;
 }
+
+void dezalocareHeap(Heap* heap) {
+	for (int i = 0; i < heap->lungime; i++) {
+		free(heap->masini[i].model);
+		free(heap->masini[i].numeSofer);
+	}
+
+	free(heap->masini);
+
+	heap->masini = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
