@@ -161,3 +161,18 @@ Student extrageStudent(Heap* heap) {
 
 	return student;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+
+		free(heap->studenti[i].nume);
+		free(heap->studenti[i].facultate);
+	}
+
+	free(heap->studenti);
+
+	heap->studenti = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
