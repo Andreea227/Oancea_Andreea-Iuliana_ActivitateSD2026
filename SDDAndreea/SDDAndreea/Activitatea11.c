@@ -121,3 +121,26 @@ void afiseazaHeapAscuns(Heap heap) {
 		afisareMasina(heap.masini[i]);
 	}
 }
+
+Masina extrageMasina(Heap* heap) {
+	Masina masina;
+	masina.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		masina = heap->masini[0];
+
+		heap->masini[0] =
+			heap->masini[heap->nrElemente - 1];
+
+		heap->masini[heap->nrElemente - 1] = masina;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return masina;
+}
