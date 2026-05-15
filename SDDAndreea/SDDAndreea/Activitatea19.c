@@ -57,3 +57,11 @@ void afisareTelefon(Telefon t) {
 	printf("Model: %s\n", t.model);
 	printf("Memorie: %c\n\n", t.memorie);
 }
+
+Heap initializareHeap(int lungime) {
+	Heap heap;
+	heap.lungime = lungime;
+	heap.telefoane = malloc(sizeof(Telefon) * lungime);
+	heap.nrElemente = 0;
+	return heap;
+}
