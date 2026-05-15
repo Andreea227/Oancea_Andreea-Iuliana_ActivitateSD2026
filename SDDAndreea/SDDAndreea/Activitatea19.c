@@ -151,3 +151,16 @@ Telefon extrageTelefon(Heap* heap) {
 
 	return t;
 }
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+		free(heap->telefoane[i].brand);
+		free(heap->telefoane[i].model);
+	}
+
+	free(heap->telefoane);
+
+	heap->telefoane = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
