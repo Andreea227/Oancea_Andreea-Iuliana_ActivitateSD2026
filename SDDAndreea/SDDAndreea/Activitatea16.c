@@ -165,3 +165,52 @@ void dezalocareArboreDeProduse(
 		*rad = NULL;
 	}
 }
+
+Produs getProdusByID(
+	Nod* rad,
+	int id) {
+
+	Produs p;
+
+	p.id = -1;
+
+	if (rad) {
+
+		if (rad->info.id == id) {
+
+			p = rad->info;
+
+			p.denumire = malloc(
+				sizeof(char) *
+				(strlen(rad->info.denumire) + 1));
+
+			strcpy(
+				p.denumire,
+				rad->info.denumire);
+
+			p.producator = malloc(
+				sizeof(char) *
+				(strlen(rad->info.producator) + 1));
+
+			strcpy(
+				p.producator,
+				rad->info.producator);
+		}
+
+		if (id < rad->info.id) {
+
+			p = getProdusByID(
+				rad->st,
+				id);
+		}
+
+		if (id > rad->info.id) {
+
+			p = getProdusByID(
+				rad->dr,
+				id);
+		}
+	}
+
+	return p;
+}
