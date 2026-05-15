@@ -152,3 +152,17 @@ Laptop extrageLaptop(Heap* heap) {
 
 	return l;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+		free(heap->laptopuri[i].brand);
+		free(heap->laptopuri[i].procesor);
+	}
+
+	free(heap->laptopuri);
+
+	heap->laptopuri = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
