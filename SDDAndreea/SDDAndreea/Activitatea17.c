@@ -65,3 +65,30 @@ Heap initializareHeap(int lungime) {
 	heap.nrElemente = 0;
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.conturi[pozMin].sold > heap.conturi[pozSt].sold) {
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.conturi[pozMin].sold > heap.conturi[pozDr].sold) {
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+		ContBancar aux = heap.conturi[pozMin];
+		heap.conturi[pozMin] = heap.conturi[pozitieNod];
+		heap.conturi[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
