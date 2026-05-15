@@ -56,3 +56,10 @@ void afisareStudent(Student s) {
 	printf("Facultate: %s\n", s.facultate);
 	printf("An: %c\n\n", s.an);
 }
+Heap initializareHeap(int lungime) {
+	Heap heap;
+	heap.lungime = lungime;
+	heap.studenti = malloc(sizeof(Student) * lungime);
+	heap.nrElemente = 0;
+	return heap;
+}
