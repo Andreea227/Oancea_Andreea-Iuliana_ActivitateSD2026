@@ -127,3 +127,27 @@ void afiseazaHeapAscuns(Heap heap) {
 		afisareTelefon(heap.telefoane[i]);
 	}
 }
+
+Telefon extrageTelefon(Heap* heap) {
+
+	Telefon t;
+	t.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		t = heap->telefoane[0];
+
+		heap->telefoane[0] =
+			heap->telefoane[heap->nrElemente - 1];
+
+		heap->telefoane[heap->nrElemente - 1] = t;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return t;
+}
