@@ -48,3 +48,12 @@ ContBancar citireContDinFisier(FILE* file) {
 
 	return c;
 }
+
+void afisareCont(ContBancar c) {
+	printf("Id: %d\n", c.id);
+	printf("Sold: %d\n", c.sold);
+	printf("Dobanda: %.2f\n", c.dobanda);
+	printf("Titular: %s\n", c.titular);
+	printf("Banca: %s\n", c.banca);
+	printf("Tip: %c\n\n", c.tip);
+}
