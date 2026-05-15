@@ -52,3 +52,13 @@ Produs citireProdusDinFisier(FILE* file) {
 
 	return p;
 }
+
+void afisareProdus(Produs produs) {
+
+	printf("Id: %d\n", produs.id);
+	printf("Stoc: %d\n", produs.stoc);
+	printf("Pret: %.2f\n", produs.pret);
+	printf("Denumire: %s\n", produs.denumire);
+	printf("Producator: %s\n", produs.producator);
+	printf("Categorie: %c\n\n", produs.categorie);
+}
