@@ -120,3 +120,27 @@ Nod* citireArboreDeProduseDinFisier(
 
 	return rad;
 }
+
+void afisareProduseDinArbore(Nod* rad) {
+
+	if (rad) {
+
+		afisareProduseDinArbore(rad->st);
+
+		afisareProdus(rad->info);
+
+		afisareProduseDinArbore(rad->dr);
+	}
+}
+
+void afisarePreordine(Nod* rad) {
+
+	if (rad) {
+
+		afisareProdus(rad->info);
+
+		afisarePreordine(rad->st);
+
+		afisarePreordine(rad->dr);
+	}
+}
