@@ -57,3 +57,11 @@ void afisareLaptop(Laptop l) {
 	printf("Procesor: %s\n", l.procesor);
 	printf("Generatie: %c\n\n", l.generatie);
 }
+
+Heap initializareHeap(int lungime) {
+	Heap heap;
+	heap.lungime = lungime;
+	heap.laptopuri = malloc(sizeof(Laptop) * lungime);
+	heap.nrElemente = 0;
+	return heap;
+}
