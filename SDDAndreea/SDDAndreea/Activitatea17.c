@@ -92,3 +92,24 @@ void filtreazaHeap(Heap heap, int pozitieNod) {
 		}
 	}
 }
+
+Heap citireHeapDinFisier(const char* numeFisier) {
+
+	Heap heap = initializareHeap(10);
+	FILE* f = fopen(numeFisier, "r");
+
+	if (f) {
+		while (!feof(f)) {
+			heap.conturi[heap.nrElemente++] =
+				citireContDinFisier(f);
+		}
+	}
+
+	fclose(f);
+
+	for (int i = (heap.nrElemente - 2) / 2; i >= 0; i--) {
+		filtreazaHeap(heap, i);
+	}
+
+	return heap;
+}
