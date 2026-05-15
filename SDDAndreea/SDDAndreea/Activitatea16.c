@@ -19,3 +19,36 @@ struct Nod {
 	struct Nod* dr;
 };
 typedef struct Nod Nod;
+
+Produs citireProdusDinFisier(FILE* file) {
+
+	char buffer[100];
+	char sep[3] = ",\n";
+
+	fgets(buffer, 100, file);
+
+	char* aux;
+
+	Produs p;
+
+	aux = strtok(buffer, sep);
+	p.id = atoi(aux);
+
+	p.stoc = atoi(strtok(NULL, sep));
+
+	p.pret = atof(strtok(NULL, sep));
+
+	aux = strtok(NULL, sep);
+
+	p.denumire = malloc(strlen(aux) + 1);
+	strcpy_s(p.denumire, strlen(aux) + 1, aux);
+
+	aux = strtok(NULL, sep);
+
+	p.producator = malloc(strlen(aux) + 1);
+	strcpy_s(p.producator, strlen(aux) + 1, aux);
+
+	p.categorie = *strtok(NULL, sep);
+
+	return p;
+}
