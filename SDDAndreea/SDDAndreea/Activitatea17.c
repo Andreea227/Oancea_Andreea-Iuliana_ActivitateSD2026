@@ -57,3 +57,11 @@ void afisareCont(ContBancar c) {
 	printf("Banca: %s\n", c.banca);
 	printf("Tip: %c\n\n", c.tip);
 }
+
+Heap initializareHeap(int lungime) {
+	Heap heap;
+	heap.lungime = lungime;
+	heap.conturi = malloc(sizeof(ContBancar) * lungime);
+	heap.nrElemente = 0;
+	return heap;
+}
