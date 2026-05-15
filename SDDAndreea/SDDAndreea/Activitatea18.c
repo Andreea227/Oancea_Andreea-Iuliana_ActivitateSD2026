@@ -65,3 +65,30 @@ Heap initializareHeap(int lungime) {
 	heap.nrElemente = 0;
 	return heap;
 }
+
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMin = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.laptopuri[pozMin].pret > heap.laptopuri[pozSt].pret) {
+		pozMin = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.laptopuri[pozMin].pret > heap.laptopuri[pozDr].pret) {
+		pozMin = pozDr;
+	}
+
+	if (pozMin != pozitieNod) {
+		Laptop aux = heap.laptopuri[pozMin];
+		heap.laptopuri[pozMin] = heap.laptopuri[pozitieNod];
+		heap.laptopuri[pozitieNod] = aux;
+
+		if (pozMin < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMin);
+		}
+	}
+}
