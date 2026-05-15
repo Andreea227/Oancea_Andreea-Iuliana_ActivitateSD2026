@@ -48,3 +48,11 @@ Student citireStudentDinFisier(FILE* file) {
 
 	return s;
 }
+void afisareStudent(Student s) {
+	printf("Id: %d\n", s.id);
+	printf("Varsta: %d\n", s.varsta);
+	printf("Medie: %.2f\n", s.medie);
+	printf("Nume: %s\n", s.nume);
+	printf("Facultate: %s\n", s.facultate);
+	printf("An: %c\n\n", s.an);
+}
