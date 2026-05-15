@@ -144,3 +144,24 @@ void afisarePreordine(Nod* rad) {
 		afisarePreordine(rad->dr);
 	}
 }
+
+void dezalocareArboreDeProduse(
+	Nod** rad) {
+
+	if (*rad) {
+
+		dezalocareArboreDeProduse(
+			&(*rad)->st);
+
+		dezalocareArboreDeProduse(
+			&(*rad)->dr);
+
+		free((*rad)->info.denumire);
+
+		free((*rad)->info.producator);
+
+		free(*rad);
+
+		*rad = NULL;
+	}
+}
