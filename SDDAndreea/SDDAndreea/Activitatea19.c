@@ -114,3 +114,16 @@ Heap citireHeapDinFisier(const char* numeFisier) {
 
 	return heap;
 }
+void afisareHeap(Heap heap) {
+
+	for (int i = 0; i < heap.nrElemente; i++) {
+		afisareTelefon(heap.telefoane[i]);
+	}
+}
+
+void afiseazaHeapAscuns(Heap heap) {
+
+	for (int i = heap.nrElemente; i < heap.lungime; i++) {
+		afisareTelefon(heap.telefoane[i]);
+	}
+}
