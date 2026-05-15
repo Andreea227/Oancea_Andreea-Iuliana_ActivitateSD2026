@@ -137,3 +137,17 @@ ContBancar extrageCont(Heap* heap) {
 
 	return c;
 }
+
+void dezalocareHeap(Heap* heap) {
+
+	for (int i = 0; i < heap->lungime; i++) {
+		free(heap->conturi[i].titular);
+		free(heap->conturi[i].banca);
+	}
+
+	free(heap->conturi);
+
+	heap->conturi = NULL;
+	heap->lungime = 0;
+	heap->nrElemente = 0;
+}
