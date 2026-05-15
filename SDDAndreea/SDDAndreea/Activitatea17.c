@@ -113,3 +113,27 @@ Heap citireHeapDinFisier(const char* numeFisier) {
 
 	return heap;
 }
+
+ContBancar extrageCont(Heap* heap) {
+
+	ContBancar c;
+	c.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		c = heap->conturi[0];
+
+		heap->conturi[0] =
+			heap->conturi[heap->nrElemente - 1];
+
+		heap->conturi[heap->nrElemente - 1] = c;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return c;
+}
