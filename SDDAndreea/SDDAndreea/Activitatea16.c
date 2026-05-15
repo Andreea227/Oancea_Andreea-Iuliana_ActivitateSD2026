@@ -95,3 +95,28 @@ void adaugaProdusInArbore(
 		}
 	}
 }
+
+Nod* citireArboreDeProduseDinFisier(
+	const char* numeFisier) {
+
+	Nod* rad = NULL;
+
+	FILE* f = fopen(numeFisier, "r");
+
+	if (f) {
+
+		while (!feof(f)) {
+
+			Produs p =
+				citireProdusDinFisier(f);
+
+			adaugaProdusInArbore(
+				&rad,
+				p);
+		}
+	}
+
+	fclose(f);
+
+	return rad;
+}
