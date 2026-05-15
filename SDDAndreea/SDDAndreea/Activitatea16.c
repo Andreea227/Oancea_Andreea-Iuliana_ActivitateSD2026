@@ -283,3 +283,36 @@ float calculeazaPretulProduselorUnuiProducator(
 
 	return 0;
 }
+
+int main() {
+
+	Nod* rad =
+		citireArboreDeProduseDinFisier(
+			"produse.txt");
+
+	afisarePreordine(rad);
+
+	printf("Produs cautat:");
+
+	afisareProdus(
+		getProdusByID(rad, 10));
+
+	printf("Numar noduri:%d\n",
+		determinaNumarNoduri(rad));
+
+	printf("Inaltime arbore:%d\n",
+		calculeazaInaltimeArbore(rad));
+
+	printf("Pret total:%.2f\n",
+		calculeazaPretTotal(rad));
+
+	printf(
+		"Suma preturilor produselor unui producator:%.2f\n",
+		calculeazaPretulProduselorUnuiProducator(
+			rad,
+			"Samsung"));
+
+	dezalocareArboreDeProduse(&rad);
+
+	return 0;
+}
