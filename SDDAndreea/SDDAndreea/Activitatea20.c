@@ -63,3 +63,29 @@ Heap initializareHeap(int lungime) {
 	heap.nrElemente = 0;
 	return heap;
 }
+void filtreazaHeap(Heap heap, int pozitieNod) {
+
+	int pozSt = 2 * pozitieNod + 1;
+	int pozDr = 2 * pozitieNod + 2;
+	int pozMax = pozitieNod;
+
+	if (pozSt < heap.nrElemente &&
+		heap.studenti[pozMax].medie < heap.studenti[pozSt].medie) {
+		pozMax = pozSt;
+	}
+
+	if (pozDr < heap.nrElemente &&
+		heap.studenti[pozMax].medie < heap.studenti[pozDr].medie) {
+		pozMax = pozDr;
+	}
+
+	if (pozMax != pozitieNod) {
+		Student aux = heap.studenti[pozMax];
+		heap.studenti[pozMax] = heap.studenti[pozitieNod];
+		heap.studenti[pozitieNod] = aux;
+
+		if (pozMax < (heap.nrElemente - 2) / 2) {
+			filtreazaHeap(heap, pozMax);
+		}
+	}
+}
