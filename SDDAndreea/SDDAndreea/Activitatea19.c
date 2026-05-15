@@ -164,3 +164,25 @@ void dezalocareHeap(Heap* heap) {
 	heap->lungime = 0;
 	heap->nrElemente = 0;
 }
+
+int main() {
+
+	Heap heap = citireHeapDinFisier("telefoane.txt");
+
+	afisareHeap(heap);
+
+	printf("Extrageri:\n");
+
+	afisareTelefon(extrageTelefon(&heap));
+	afisareTelefon(extrageTelefon(&heap));
+
+	printf("Heap ramas:\n");
+	afisareHeap(heap);
+
+	printf("Elemente ascunse:\n");
+	afiseazaHeapAscuns(heap);
+
+	dezalocareHeap(&heap);
+
+	return 0;
+}
