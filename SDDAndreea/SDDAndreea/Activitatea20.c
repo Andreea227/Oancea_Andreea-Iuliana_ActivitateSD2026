@@ -110,3 +110,17 @@ Heap citireHeapDinFisier(const char* numeFisier) {
 
 	return heap;
 }
+
+void afisareHeap(Heap heap) {
+
+	for (int i = 0; i < heap.nrElemente; i++) {
+		afisareStudent(heap.studenti[i]);
+	}
+}
+
+void afiseazaHeapAscuns(Heap heap) {
+
+	for (int i = heap.nrElemente; i < heap.lungime; i++) {
+		afisareStudent(heap.studenti[i]);
+	}
+}
