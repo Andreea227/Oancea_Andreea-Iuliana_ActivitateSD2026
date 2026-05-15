@@ -166,3 +166,25 @@ void dezalocareHeap(Heap* heap) {
 	heap->lungime = 0;
 	heap->nrElemente = 0;
 }
+
+int main() {
+
+	Heap heap = citireHeapDinFisier("laptopuri.txt");
+
+	afisareHeap(heap);
+
+	printf("Extrageri:\n");
+
+	afisareLaptop(extrageLaptop(&heap));
+	afisareLaptop(extrageLaptop(&heap));
+
+	printf("Heap ramas:\n");
+	afisareHeap(heap);
+
+	printf("Elemente ascunse:\n");
+	afiseazaHeapAscuns(heap);
+
+	dezalocareHeap(&heap);
+
+	return 0;
+}
