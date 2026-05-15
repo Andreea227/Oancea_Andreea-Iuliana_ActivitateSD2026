@@ -48,3 +48,12 @@ Telefon citireTelefonDinFisier(FILE* file) {
 
 	return t;
 }
+
+void afisareTelefon(Telefon t) {
+	printf("Id: %d\n", t.id);
+	printf("Stoc: %d\n", t.stoc);
+	printf("Pret: %.2f\n", t.pret);
+	printf("Brand: %s\n", t.brand);
+	printf("Model: %s\n", t.model);
+	printf("Memorie: %c\n\n", t.memorie);
+}
