@@ -214,3 +214,72 @@ Produs getProdusByID(
 
 	return p;
 }
+
+int determinaNumarNoduri(Nod* rad) {
+
+	if (rad) {
+
+		return determinaNumarNoduri(rad->st) +
+			+determinaNumarNoduri(rad->dr) + 1;
+	}
+
+	return 0;
+}
+
+int maxim(int a, int b) {
+
+	return (a > b ? a : b);
+}
+
+int calculeazaInaltimeArbore(Nod* rad) {
+
+	if (rad) {
+
+		return maxim(
+			calculeazaInaltimeArbore(rad->st),
+			calculeazaInaltimeArbore(rad->dr))
+			+ 1;
+	}
+
+	return 0;
+}
+
+float calculeazaPretTotal(Nod* rad) {
+
+	if (rad) {
+
+		return rad->info.pret +
+			+calculeazaPretTotal(rad->st) +
+			+calculeazaPretTotal(rad->dr);
+	}
+
+	return 0;
+}
+
+float calculeazaPretulProduselorUnuiProducator(
+	Nod* rad,
+	const char* producator) {
+
+	if (rad) {
+
+		float suma =
+			calculeazaPretulProduselorUnuiProducator(
+				rad->st,
+				producator)
+			+
+			calculeazaPretulProduselorUnuiProducator(
+				rad->dr,
+				producator);
+
+		if (strcmp(
+			rad->info.producator,
+			producator) == 0) {
+
+			suma += rad->info.pret;
+		}
+
+		return suma;
+	}
+
+	return 0;
+}
