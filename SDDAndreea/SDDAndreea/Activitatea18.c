@@ -128,3 +128,27 @@ void afiseazaHeapAscuns(Heap heap) {
 		afisareLaptop(heap.laptopuri[i]);
 	}
 }
+
+Laptop extrageLaptop(Heap* heap) {
+
+	Laptop l;
+	l.id = -1;
+
+	if (heap->nrElemente > 0) {
+
+		l = heap->laptopuri[0];
+
+		heap->laptopuri[0] =
+			heap->laptopuri[heap->nrElemente - 1];
+
+		heap->laptopuri[heap->nrElemente - 1] = l;
+
+		heap->nrElemente--;
+
+		for (int i = (heap->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*heap, i);
+		}
+	}
+
+	return l;
+}
