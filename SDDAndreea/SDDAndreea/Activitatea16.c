@@ -62,3 +62,36 @@ void afisareProdus(Produs produs) {
 	printf("Producator: %s\n", produs.producator);
 	printf("Categorie: %c\n\n", produs.categorie);
 }
+
+void adaugaProdusInArbore(
+	Nod** rad,
+	Produs produsNou) {
+
+	if (*rad == NULL) {
+
+		Nod* nod = malloc(sizeof(Nod));
+
+		nod->info = produsNou;
+
+		nod->dr = NULL;
+		nod->st = NULL;
+
+		*rad = nod;
+	}
+	else {
+
+		if ((*rad)->info.id > produsNou.id) {
+
+			adaugaProdusInArbore(
+				&((*rad)->st),
+				produsNou);
+		}
+
+		if ((*rad)->info.id < produsNou.id) {
+
+			adaugaProdusInArbore(
+				&((*rad)->dr),
+				produsNou);
+		}
+	}
+}
