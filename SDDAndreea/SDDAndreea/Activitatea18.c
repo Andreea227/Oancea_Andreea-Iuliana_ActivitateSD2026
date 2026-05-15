@@ -48,3 +48,12 @@ Laptop citireLaptopDinFisier(FILE* file) {
 
 	return l;
 }
+
+void afisareLaptop(Laptop l) {
+	printf("Id: %d\n", l.id);
+	printf("RAM: %d\n", l.ram);
+	printf("Pret: %.2f\n", l.pret);
+	printf("Brand: %s\n", l.brand);
+	printf("Procesor: %s\n", l.procesor);
+	printf("Generatie: %c\n\n", l.generatie);
+}
