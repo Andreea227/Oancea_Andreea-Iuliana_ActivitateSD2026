@@ -123,3 +123,11 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaGreutateTotala(Nod* rad) {
+	if (rad) {
+		return rad->info.greutate
+			+ calculeazaGreutateTotala(rad->st)
+			+ calculeazaGreutateTotala(rad->dr);
+	}
+	return 0;
+}
