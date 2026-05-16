@@ -106,3 +106,10 @@ void adaugaObiectInArbore(Nod** rad, ObiectMarin oNou) {
 		rotireLaStanga(rad);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareObiect(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
