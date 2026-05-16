@@ -169,3 +169,15 @@ float calculeazaPIBTotal(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaPIBPeContinent(Nod* rad, char continent) {
+	if (rad) {
+		float suma = calculeazaPIBPeContinent(rad->st, continent) +
+			calculeazaPIBPeContinent(rad->dr, continent);
+
+		if (rad->info.continent == continent) {
+			suma += rad->info.pib;
+		}
+		return suma;
+	}
+	return 0;
+}
