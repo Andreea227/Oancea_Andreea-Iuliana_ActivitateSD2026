@@ -46,3 +46,11 @@ Prajitura citirePrajituraDinFisier(FILE* file) {
 
 	return p;
 }
+void afisarePrajitura(Prajitura p) {
+	printf("Id: %d\n", p.id);
+	printf("Calorii: %d\n", p.calorii);
+	printf("Pret: %.2f\n", p.pret);
+	printf("Nume: %s\n", p.nume);
+	printf("Cofetarie: %s\n", p.cofetarie);
+	printf("Tip: %c\n\n", p.tip);
+}
