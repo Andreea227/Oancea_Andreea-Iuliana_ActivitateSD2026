@@ -137,3 +137,8 @@ void dezalocareHeap(Heap* h) {
 	h->capacitate = 0;
 	h->nrElemente = 0;
 }
+char* getNextFlight(Heap h) {
+	if (h.nrElemente > 0)
+		return h.zboruri[0].destinatie;
+	return "";
+}
