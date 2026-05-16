@@ -129,3 +129,15 @@ int calculeazaCapacitateTotala(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaLungimePeTip(Nod* rad, const char* tip) {
+	if (rad) {
+		float s = calculeazaLungimePeTip(rad->st, tip)
+			+ calculeazaLungimePeTip(rad->dr, tip);
+
+		if (strcmp(rad->info.tip, tip) == 0)
+			s += rad->info.lungime;
+
+		return s;
+	}
+	return 0;
+}
