@@ -143,3 +143,14 @@ float calculeazaPretPeHotel(Nod* rad, const char* hotel) {
 	}
 	return 0;
 }
+void dezalocareArbore(Nod** rad) {
+	if (*rad) {
+		dezalocareArbore(&(*rad)->st);
+		dezalocareArbore(&(*rad)->dr);
+
+		free((*rad)->info.tipCamera);
+		free((*rad)->info.hotel);
+		free(*rad);
+		*rad = NULL;
+	}
+}
