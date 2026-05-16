@@ -19,3 +19,12 @@ struct Nod {
 	struct Nod* dr;
 };
 typedef struct Nod Nod;
+
+void afisareCarte(Carte c) {
+	printf("Id: %d\n", c.id);
+	printf("An aparitie: %d\n", c.anAparitie);
+	printf("Pret: %.2f\n", c.pret);
+	printf("Titlu: %s\n", c.titlu);
+	printf("Autor: %s\n", c.autor);
+	printf("Gen: %c\n\n", c.gen);
+}
