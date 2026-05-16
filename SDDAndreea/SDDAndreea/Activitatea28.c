@@ -108,4 +108,20 @@ void afisareHeapAscuns(Heap h) {
 		afisarePrajitura(h.prajituri[i]);
 	}
 }
+Prajitura extragePrajitura(Heap* h) {
+	Prajitura p;
+	p.id = -1;
 
+	if (h->nrElemente > 0) {
+		p = h->prajituri[0];
+
+		h->prajituri[0] = h->prajituri[h->nrElemente - 1];
+		h->prajituri[h->nrElemente - 1] = p;
+		h->nrElemente--;
+
+		for (int i = (h->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*h, i);
+		}
+	}
+	return p;
+}
