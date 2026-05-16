@@ -95,3 +95,10 @@ void afisareTariInArbore(Nod* rad) {
 		afisareTariInArbore(rad->dr);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareTara(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
