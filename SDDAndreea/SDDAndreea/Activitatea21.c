@@ -114,3 +114,29 @@ void dezalocareArboreDeTari(Nod** rad) {
 		*rad = NULL;
 	}
 }
+Tara getTaraByID(Nod* rad, int id) {
+	Tara t;
+	t.id = -1;
+
+	if (rad) {
+		if (rad->info.id == id) {
+			t = rad->info;
+
+			t.numeTara = malloc(strlen(rad->info.numeTara) + 1);
+			strcpy(t.numeTara, rad->info.numeTara);
+
+			t.capitala = malloc(strlen(rad->info.capitala) + 1);
+			strcpy(t.capitala, rad->info.capitala);
+
+			return t;
+		}
+
+		if (id < rad->info.id)
+			return getTaraByID(rad->st, id);
+
+		if (id > rad->info.id)
+			return getTaraByID(rad->dr, id);
+	}
+
+	return t;
+}
