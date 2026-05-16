@@ -102,3 +102,15 @@ void afisarePreordine(Nod* rad) {
 		afisarePreordine(rad->dr);
 	}
 }
+void dezalocareArboreDeTari(Nod** rad) {
+	if (*rad) {
+		dezalocareArboreDeTari(&(*rad)->st);
+		dezalocareArboreDeTari(&(*rad)->dr);
+
+		free((*rad)->info.numeTara);
+		free((*rad)->info.capitala);
+		free(*rad);
+
+		*rad = NULL;
+	}
+}
