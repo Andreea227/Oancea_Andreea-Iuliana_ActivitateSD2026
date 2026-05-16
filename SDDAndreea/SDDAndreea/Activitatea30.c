@@ -33,3 +33,13 @@ struct HashTable {
 int functieHash(int dim, const char* nume) {
 	return strlen(nume) % dim;
 }
+HashTable creareTabela(int dim) {
+	HashTable ht;
+	ht.dim = dim;
+	ht.vector = (Nod**)malloc(sizeof(Nod*) * dim);
+
+	for (int i = 0; i < dim; i++) {
+		ht.vector[i] = NULL;
+	}
+	return ht;
+}
