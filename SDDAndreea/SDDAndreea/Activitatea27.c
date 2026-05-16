@@ -104,3 +104,8 @@ void afisareHeap(Heap h) {
 		afisareZbor(h.zboruri[i]);
 	}
 }
+void afisareHeapAscuns(Heap h) {
+	for (int i = h.nrElemente; i < h.capacitate; i++) {
+		afisareZbor(h.zboruri[i]);
+	}
+}
