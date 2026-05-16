@@ -28,3 +28,20 @@ void afisareMembru(Membru m) {
 	printf("Tip abonament: %s\n", m.tipAbonament);
 	printf("Cod: %c\n\n", m.cod);
 }
+Membru initMembru(int id, int varsta, float abonament,
+	const char* nume, const char* tipAbonament, unsigned char cod) {
+
+	Membru m;
+	m.id = id;
+	m.varsta = varsta;
+	m.abonament = abonament;
+	m.cod = cod;
+
+	m.nume = malloc(strlen(nume) + 1);
+	strcpy(m.nume, nume);
+
+	m.tipAbonament = malloc(strlen(tipAbonament) + 1);
+	strcpy(m.tipAbonament, tipAbonament);
+
+	return m;
+}
