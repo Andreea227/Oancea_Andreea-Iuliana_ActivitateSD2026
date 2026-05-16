@@ -28,3 +28,20 @@ void afisareObiect(ObiectMarin o) {
 	printf("Tip: %s\n", o.tip);
 	printf("Steag: %c\n\n", o.steag);
 }
+ObiectMarin initObiect(int id, int cap, float lungime,
+	const char* nume, const char* tip, unsigned char steag) {
+
+	ObiectMarin o;
+	o.id = id;
+	o.capacitate = cap;
+	o.lungime = lungime;
+	o.steag = steag;
+
+	o.nume = malloc(strlen(nume) + 1);
+	strcpy(o.nume, nume);
+
+	o.tip = malloc(strlen(tip) + 1);
+	strcpy(o.tip, tip);
+
+	return o;
+}
