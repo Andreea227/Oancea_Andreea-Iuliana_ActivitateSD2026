@@ -130,3 +130,11 @@ float calculeazaPretTotal(Nod* rad) {
 	return 0;
 }
 
+float calculeazaValoareStoc(Nod* rad) {
+	if (rad) {
+		return (rad->info.pret * rad->info.cantitate)
+			+ calculeazaValoareStoc(rad->st)
+			+ calculeazaValoareStoc(rad->dr);
+	}
+	return 0;
+}
