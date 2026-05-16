@@ -93,3 +93,9 @@ void adaugaObiectInArbore(Nod** rad, ObiectMarin oNou) {
 	}
 
 	int dif = calculDiferentaInaltimi(*rad);
+	if (dif == 2) {
+		if (calculDiferentaInaltimi((*rad)->st) == -1)
+			rotireLaStanga(&(*rad)->st);
+
+		rotireLaDreapta(rad);
+	}
