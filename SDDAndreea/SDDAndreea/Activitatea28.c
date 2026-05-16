@@ -141,3 +141,20 @@ char* getNextCake(Heap h) {
 		return h.prajituri[0].nume;
 	return "";
 }
+int main() {
+
+	Heap h = citireHeapPrajituriDinFisier("prajituri.txt");
+	afisareHeap(h);
+
+	printf("Extragere prajituri:\n");
+	afisarePrajitura(extragePrajitura(&h));
+	afisarePrajitura(extragePrajitura(&h));
+
+	printf("Heap ramas:\n");
+	afisareHeap(h);
+
+	printf("Urmatoarea prajitura: %s\n", getNextCake(h));
+
+	dezalocareHeap(&h);
+	return 0;
+}
