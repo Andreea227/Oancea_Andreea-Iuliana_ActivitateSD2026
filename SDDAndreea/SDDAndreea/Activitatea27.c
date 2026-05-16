@@ -109,3 +109,20 @@ void afisareHeapAscuns(Heap h) {
 		afisareZbor(h.zboruri[i]);
 	}
 }
+Zbor extrageZbor(Heap* h) {
+	Zbor z;
+	z.id = -1;
+
+	if (h->nrElemente > 0) {
+		z = h->zboruri[0];
+
+		h->zboruri[0] = h->zboruri[h->nrElemente - 1];
+		h->zboruri[h->nrElemente - 1] = z;
+		h->nrElemente--;
+
+		for (int i = (h->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*h, i);
+		}
+	}
+	return z;
+}
