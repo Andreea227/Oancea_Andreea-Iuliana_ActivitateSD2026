@@ -88,3 +88,10 @@ Nod* citireArboreDeTariDinFisier(const char* numeFisier) {
 
 	return rad;
 }
+void afisareTariInArbore(Nod* rad) {
+	if (rad) {
+		afisareTariInArbore(rad->st);
+		afisareTara(rad->info);
+		afisareTariInArbore(rad->dr);
+	}
+}
