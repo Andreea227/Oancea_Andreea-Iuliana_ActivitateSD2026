@@ -28,3 +28,20 @@ void afisareIngredient(Ingredient i) {
 	printf("Unitate: %s\n", i.unitate);
 	printf("Cod: %c\n\n", i.cod);
 }
+Ingredient initIngredient(int id, int cantitate, float pret,
+	const char* nume, const char* unitate, unsigned char cod) {
+
+	Ingredient i;
+	i.id = id;
+	i.cantitate = cantitate;
+	i.pret = pret;
+	i.cod = cod;
+
+	i.nume = malloc(strlen(nume) + 1);
+	strcpy(i.nume, nume);
+
+	i.unitate = malloc(strlen(unitate) + 1);
+	strcpy(i.unitate, unitate);
+
+	return i;
+}
