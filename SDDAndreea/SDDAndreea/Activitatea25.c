@@ -19,3 +19,12 @@ struct Nod {
 	struct Nod* dr;
 };
 typedef struct Nod Nod;
+
+void afisareCamera(Camera c) {
+	printf("Id: %d\n", c.id);
+	printf("Nr paturi: %d\n", c.nrPaturi);
+	printf("Pret/noapte: %.2f\n", c.pretNoapte);
+	printf("Tip camera: %s\n", c.tipCamera);
+	printf("Hotel: %s\n", c.hotel);
+	printf("Etaj: %c\n\n", c.etaj);
+}
