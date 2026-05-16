@@ -108,3 +108,20 @@ void afisareHeapAscuns(Heap h) {
 		afisarePacient(h.pacienti[i]);
 	}
 }
+Pacient extragePacient(Heap* h) {
+	Pacient p;
+	p.id = -1;
+
+	if (h->nrElemente > 0) {
+		p = h->pacienti[0];
+
+		h->pacienti[0] = h->pacienti[h->nrElemente - 1];
+		h->pacienti[h->nrElemente - 1] = p;
+		h->nrElemente--;
+
+		for (int i = (h->nrElemente - 2) / 2; i >= 0; i--) {
+			filtreazaHeap(*h, i);
+		}
+	}
+	return p;
+}
