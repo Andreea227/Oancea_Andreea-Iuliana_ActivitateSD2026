@@ -54,3 +54,11 @@ void afisareZbor(Zbor z) {
 	printf("Companie: %s\n", z.companie);
 	printf("Terminal: %c\n\n", z.terminal);
 }
+
+Heap initializareHeap(int capacitate) {
+	Heap h;
+	h.capacitate = capacitate;
+	h.zboruri = malloc(sizeof(Zbor) * capacitate);
+	h.nrElemente = 0;
+	return h;
+}
