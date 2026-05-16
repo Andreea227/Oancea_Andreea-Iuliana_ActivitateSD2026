@@ -69,3 +69,9 @@ void afisareCinema(Cinema c) {
 	printf("Cinema %s are %d sali\n", c.nume, c.nrSali);
 }
 
+void afisareLista(Nod* cap) {
+	while (cap) {
+		afisareCinema(cap->info);
+		cap = cap->next;
+	}
+}
