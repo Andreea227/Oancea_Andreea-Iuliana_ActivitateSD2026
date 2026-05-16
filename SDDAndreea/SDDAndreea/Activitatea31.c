@@ -138,3 +138,14 @@ float calculeazaValoareStoc(Nod* rad) {
 	}
 	return 0;
 }
+void dezalocareArbore(Nod** rad) {
+	if (*rad) {
+		dezalocareArbore(&(*rad)->st);
+		dezalocareArbore(&(*rad)->dr);
+
+		free((*rad)->info.nume);
+		free((*rad)->info.unitate);
+		free(*rad);
+		*rad = NULL;
+	}
+}
