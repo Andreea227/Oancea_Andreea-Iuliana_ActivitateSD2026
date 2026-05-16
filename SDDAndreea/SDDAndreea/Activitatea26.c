@@ -103,3 +103,8 @@ void afisareHeap(Heap h) {
 		afisarePacient(h.pacienti[i]);
 	}
 }
+void afisareHeapAscuns(Heap h) {
+	for (int i = h.nrElemente; i < h.capacitate; i++) {
+		afisarePacient(h.pacienti[i]);
+	}
+}
