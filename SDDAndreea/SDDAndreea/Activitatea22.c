@@ -79,3 +79,19 @@ void rotireLaDreapta(Nod** rad) {
 	aux->dr = (*rad);
 	(*rad) = aux;
 }
+void adaugaAnimalInArbore(Nod** rad, Animal aNou) {
+	if (*rad == NULL) {
+		Nod* nod = malloc(sizeof(Nod));
+		nod->info = aNou;
+		nod->st = NULL;
+		nod->dr = NULL;
+		*rad = nod;
+	}
+	else {
+		if (aNou.id < (*rad)->info.id)
+			adaugaAnimalInArbore(&(*rad)->st, aNou);
+		else if (aNou.id > (*rad)->info.id)
+			adaugaAnimalInArbore(&(*rad)->dr, aNou);
+	}
+
+	int dif = calculDiferentaInaltimi(*rad);
