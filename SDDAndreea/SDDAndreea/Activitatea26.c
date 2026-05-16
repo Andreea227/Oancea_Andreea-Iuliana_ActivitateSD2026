@@ -46,3 +46,11 @@ Pacient citirePacientDinFisier(FILE* file) {
 
 	return p;
 }
+void afisarePacient(Pacient p) {
+	printf("Id: %d\n", p.id);
+	printf("Varsta: %d\n", p.varsta);
+	printf("Gravitate: %.2f\n", p.gravitate);
+	printf("Nume: %s\n", p.nume);
+	printf("Diagnostic: %s\n", p.diagnostic);
+	printf("Sectie: %c\n\n", p.sectie);
+}
