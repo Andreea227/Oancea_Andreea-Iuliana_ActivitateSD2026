@@ -43,3 +43,13 @@ HashTable creareTabela(int dim) {
 	}
 	return ht;
 }
+void inserareInLista(Nod* cap, Cinema c) {
+	Nod* nou = (Nod*)malloc(sizeof(Nod));
+	nou->info = c;
+	nou->next = NULL;
+
+	while (cap->next) {
+		cap = cap->next;
+	}
+	cap->next = nou;
+}
