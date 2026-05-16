@@ -79,3 +79,19 @@ void rotireLaDreapta(Nod** rad) {
 	aux->dr = (*rad);
 	(*rad) = aux;
 }
+void adaugaCameraInArbore(Nod** rad, Camera cNou) {
+	if (*rad == NULL) {
+		Nod* nod = malloc(sizeof(Nod));
+		nod->info = cNou;
+		nod->st = NULL;
+		nod->dr = NULL;
+		*rad = nod;
+	}
+	else {
+		if (cNou.id < (*rad)->info.id)
+			adaugaCameraInArbore(&(*rad)->st, cNou);
+		else if (cNou.id > (*rad)->info.id)
+			adaugaCameraInArbore(&(*rad)->dr, cNou);
+	}
+
+	int dif = calculDiferentaInaltimi(*rad);
