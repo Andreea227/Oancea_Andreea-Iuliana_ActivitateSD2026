@@ -154,3 +154,22 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaCameraInArbore(&rad, initCamera(1, 2, 250, "Single", "Hilton", '1'));
+	adaugaCameraInArbore(&rad, initCamera(2, 3, 400, "Double", "Hilton", '2'));
+	adaugaCameraInArbore(&rad, initCamera(3, 4, 600, "Suite", "Marriott", '3'));
+	adaugaCameraInArbore(&rad, initCamera(4, 2, 200, "Single", "Ibis", '1'));
+	adaugaCameraInArbore(&rad, initCamera(5, 5, 900, "Presidential", "Marriott", '5'));
+
+	afisarePreordine(rad);
+
+	printf("Numar camere: %d\n", determinaNumarNoduri(rad));
+	printf("Pret total: %.2f\n", calculeazaPretTotal(rad));
+	printf("Pret Hilton: %.2f\n", calculeazaPretPeHotel(rad, "Hilton"));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
