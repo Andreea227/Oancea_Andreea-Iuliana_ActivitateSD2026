@@ -60,3 +60,10 @@ int calculeazaInaltimeArbore(Nod* rad) {
 	}
 	return 0;
 }
+int calculDiferentaInaltimi(Nod* rad) {
+	if (rad) {
+		return calculeazaInaltimeArbore(rad->st)
+			- calculeazaInaltimeArbore(rad->dr);
+	}
+	return 0;
+}
