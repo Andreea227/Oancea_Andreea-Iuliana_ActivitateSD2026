@@ -125,3 +125,14 @@ Pacient extragePacient(Heap* h) {
 	}
 	return p;
 }
+void dezalocareHeap(Heap* h) {
+	for (int i = 0; i < h->capacitate; i++) {
+		free(h->pacienti[i].nume);
+		free(h->pacienti[i].diagnostic);
+	}
+	free(h->pacienti);
+
+	h->pacienti = NULL;
+	h->capacitate = 0;
+	h->nrElemente = 0;
+}
