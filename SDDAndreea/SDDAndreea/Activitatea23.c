@@ -152,3 +152,22 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaCarteInArbore(&rad, initCarte(1, 2001, 50, "Harry Potter", "Rowling", 'F'));
+	adaugaCarteInArbore(&rad, initCarte(2, 1999, 40, "It", "King", 'H'));
+	adaugaCarteInArbore(&rad, initCarte(3, 2010, 60, "Clean Code", "Martin", 'T'));
+	adaugaCarteInArbore(&rad, initCarte(4, 2018, 70, "Atomic Habits", "Clear", 'S'));
+	adaugaCarteInArbore(&rad, initCarte(5, 2020, 80, "Dune", "Herbert", 'S'));
+
+	afisarePreordine(rad);
+
+	printf("Numar noduri: %d\n", determinaNumarNoduri(rad));
+	printf("Pret total: %.2f\n", calculeazaPretTotal(rad));
+	printf("Pret Rowling: %.2f\n", calculeazaPretPeAutor(rad, "Rowling"));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
