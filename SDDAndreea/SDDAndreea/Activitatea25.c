@@ -115,3 +115,11 @@ void afisarePreordine(Nod* rad) {
 		afisarePreordine(rad->dr);
 	}
 }
+int determinaNumarNoduri(Nod* rad) {
+	if (rad) {
+		return determinaNumarNoduri(rad->st)
+			+ determinaNumarNoduri(rad->dr)
+			+ 1;
+	}
+	return 0;
+}
