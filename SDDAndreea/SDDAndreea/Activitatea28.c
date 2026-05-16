@@ -136,3 +136,8 @@ void dezalocareHeap(Heap* h) {
 	h->capacitate = 0;
 	h->nrElemente = 0;
 }
+char* getNextCake(Heap h) {
+	if (h.nrElemente > 0)
+		return h.prajituri[0].nume;
+	return "";
+}
