@@ -149,3 +149,22 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaContInArbore(&rad, initCont(1, 1000, 0.05, "Ion Popescu", "Economii", 'E'));
+	adaugaContInArbore(&rad, initCont(2, 5000, 0.02, "Maria Ionescu", "Curent", 'C'));
+	adaugaContInArbore(&rad, initCont(3, 2000, 0.03, "Vasile Georgescu", "Economii", 'E'));
+	adaugaContInArbore(&rad, initCont(4, 10000, 0.04, "Elena Marin", "Premium", 'P'));
+	adaugaContInArbore(&rad, initCont(5, 750, 0.01, "George Dima", "Curent", 'C'));
+
+	afisarePreordine(rad);
+
+	printf("Numar conturi: %d\n", determinaNumarNoduri(rad));
+	printf("Sold total: %.2f\n", calculeazaSoldTotal(rad));
+	printf("Valoare cu dobanda: %.2f\n", calculeazaValoareDobanda(rad));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
