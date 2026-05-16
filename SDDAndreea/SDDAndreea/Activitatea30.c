@@ -81,3 +81,18 @@ void afisareTabela(HashTable h) {
 		afisareLista(h.vector[i]);
 	}
 }
+Cinema cautaCinemaDupaNume(HashTable h, const char* nume) {
+	int poz = functieHash(h.dim, nume);
+	Nod* aux = h.vector[poz];
+
+	while (aux && strcmp(aux->info.nume, nume) != 0) {
+		aux = aux->next;
+	}
+
+	if (aux) {
+		return creareCinema(aux->info.nume, aux->info.nrSali);
+	}
+	else {
+		return creareCinema("N/A", 0);
+	}
+}
