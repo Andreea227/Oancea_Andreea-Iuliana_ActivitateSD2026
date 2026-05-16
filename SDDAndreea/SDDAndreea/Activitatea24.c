@@ -152,3 +152,22 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaObiectInArbore(&rad, initObiect(1, 10, 12.5, "Titanic", "Nava", 'B'));
+	adaugaObiectInArbore(&rad, initObiect(2, 5, 8.2, "Pescarus", "Barca", 'R'));
+	adaugaObiectInArbore(&rad, initObiect(3, 20, 30.0, "Poseidon", "Nava", 'B'));
+	adaugaObiectInArbore(&rad, initObiect(4, 15, 18.7, "Delfin", "Submarin", 'N'));
+	adaugaObiectInArbore(&rad, initObiect(5, 8, 10.1, "Ocean", "Barca", 'R'));
+
+	afisarePreordine(rad);
+
+	printf("Numar noduri: %d\n", determinaNumarNoduri(rad));
+	printf("Capacitate totala: %d\n", calculeazaCapacitateTotala(rad));
+	printf("Lungime nave: %.2f\n", calculeazaLungimePeTip(rad, "Nava"));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
