@@ -181,3 +181,21 @@ float calculeazaPIBPeContinent(Nod* rad, char continent) {
 	}
 	return 0;
 }
+int main() {
+	Nod* rad = citireArboreDeTariDinFisier("tari.txt");
+
+	printf("Afisare preordine:\n");
+	afisarePreordine(rad);
+
+	printf("Tara cautata:\n");
+	afisareTara(getTaraByID(rad, 3));
+
+	printf("Numar noduri: %d\n", determinaNumarNoduri(rad));
+	printf("Inaltime arbore: %d\n", calculeazaInaltimeArbore(rad));
+	printf("PIB total: %.2f\n", calculeazaPIBTotal(rad));
+	printf("PIB Europa: %.2f\n", calculeazaPIBPeContinent(rad, 'E'));
+
+	dezalocareArboreDeTari(&rad);
+
+	return 0;
+}
