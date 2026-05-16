@@ -56,3 +56,21 @@ void afisareTara(Tara tara) {
 	printf("Capitala: %s\n", tara.capitala);
 	printf("Continent: %c\n\n", tara.continent);
 }
+
+void adaugaTaraInArbore(Nod** rad, Tara taraNoua) {
+	if (*rad == NULL) {
+		Nod* nod = (Nod*)malloc(sizeof(Nod));
+		nod->info = taraNoua;
+		nod->st = NULL;
+		nod->dr = NULL;
+		*rad = nod;
+	}
+	else {
+		if ((*rad)->info.id > taraNoua.id) {
+			adaugaTaraInArbore(&((*rad)->st), taraNoua);
+		}
+		if ((*rad)->info.id < taraNoua.id) {
+			adaugaTaraInArbore(&((*rad)->dr), taraNoua);
+		}
+	}
+}
