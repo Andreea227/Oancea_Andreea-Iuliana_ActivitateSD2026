@@ -148,3 +148,23 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+
+int main() {
+	Nod* rad = NULL;
+
+	adaugaMembruInArbore(&rad, initMembru(1, 25, 120, "Ion", "Premium", 'P'));
+	adaugaMembruInArbore(&rad, initMembru(2, 30, 80, "Maria", "Basic", 'B'));
+	adaugaMembruInArbore(&rad, initMembru(3, 22, 150, "Andrei", "VIP", 'V'));
+	adaugaMembruInArbore(&rad, initMembru(4, 28, 100, "Elena", "Basic", 'B'));
+	adaugaMembruInArbore(&rad, initMembru(5, 35, 200, "Vasile", "VIP", 'V'));
+
+	afisarePreordine(rad);
+
+	printf("Numar membri: %d\n", determinaNumarNoduri(rad));
+	printf("Total abonamente: %.2f\n", calculeazaTotalAbonamente(rad));
+	printf("Valoare sala: %.2f\n", calculeazaValoareSala(rad));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
