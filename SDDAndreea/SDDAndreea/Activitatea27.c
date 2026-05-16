@@ -142,3 +142,21 @@ char* getNextFlight(Heap h) {
 		return h.zboruri[0].destinatie;
 	return "";
 }
+int main() {
+
+	Heap h = citireHeapZboruriDinFisier("zboruri.txt");
+	afisareHeap(h);
+
+	printf("Extragere zboruri:\n");
+	afisareZbor(extrageZbor(&h));
+	afisareZbor(extrageZbor(&h));
+	afisareZbor(extrageZbor(&h));
+
+	printf("Heap ramas:\n");
+	afisareHeap(h);
+
+	printf("Urmator zbor: %s\n", getNextFlight(h));
+
+	dezalocareHeap(&h);
+	return 0;
+}
