@@ -54,3 +54,10 @@ void afisarePacient(Pacient p) {
 	printf("Diagnostic: %s\n", p.diagnostic);
 	printf("Sectie: %c\n\n", p.sectie);
 }
+Heap initializareHeap(int capacitate) {
+	Heap h;
+	h.capacitate = capacitate;
+	h.pacienti = malloc(sizeof(Pacient) * capacitate);
+	h.nrElemente = 0;
+	return h;
+}
