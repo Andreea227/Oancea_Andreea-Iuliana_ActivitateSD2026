@@ -126,3 +126,14 @@ Zbor extrageZbor(Heap* h) {
 	}
 	return z;
 }
+void dezalocareHeap(Heap* h) {
+	for (int i = 0; i < h->capacitate; i++) {
+		free(h->zboruri[i].destinatie);
+		free(h->zboruri[i].companie);
+	}
+	free(h->zboruri);
+
+	h->zboruri = NULL;
+	h->capacitate = 0;
+	h->nrElemente = 0;
+}
