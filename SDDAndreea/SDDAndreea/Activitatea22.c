@@ -156,3 +156,21 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaAnimalInArbore(&rad, initAnimal(1, 5, 120.5, "Leu", "Simba", 'C'));
+	adaugaAnimalInArbore(&rad, initAnimal(2, 3, 80.2, "Tigru", "Raj", 'C'));
+	adaugaAnimalInArbore(&rad, initAnimal(3, 10, 300.0, "Elefant", "Dumbo", 'H'));
+	adaugaAnimalInArbore(&rad, initAnimal(4, 2, 12.3, "Iepure", "Bunny", 'H'));
+	adaugaAnimalInArbore(&rad, initAnimal(5, 7, 45.0, "Urs", "Baloo", 'O'));
+
+	afisarePreordine(rad);
+
+	printf("Numar noduri: %d\n", determinaNumarNoduri(rad));
+	printf("Greutate totala: %.2f\n", calculeazaGreutateTotala(rad));
+	printf("Greutate carnivore: %.2f\n", calculeazaGreutatePeHrana(rad, 'C'));
+
+	dezalocareArbore(&rad);
+	return 0;
+}
