@@ -131,3 +131,15 @@ float calculeazaPretTotal(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaPretPeHotel(Nod* rad, const char* hotel) {
+	if (rad) {
+		float s = calculeazaPretPeHotel(rad->st, hotel)
+			+ calculeazaPretPeHotel(rad->dr, hotel);
+
+		if (strcmp(rad->info.hotel, hotel) == 0)
+			s += rad->info.pretNoapte;
+
+		return s;
+	}
+	return 0;
+}
