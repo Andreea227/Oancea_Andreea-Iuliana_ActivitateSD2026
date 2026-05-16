@@ -98,3 +98,8 @@ Heap citireHeapPrajituriDinFisier(const char* numeFisier) {
 
 	return h;
 }
+void afisareHeap(Heap h) {
+	for (int i = 0; i < h.nrElemente; i++) {
+		afisarePrajitura(h.prajituri[i]);
+	}
+}
