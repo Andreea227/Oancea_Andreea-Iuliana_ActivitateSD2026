@@ -53,3 +53,15 @@ void inserareInLista(Nod* cap, Cinema c) {
 	}
 	cap->next = nou;
 }
+void inserareCinemaInTabela(Cinema c, HashTable h) {
+	int cod = functieHash(h.dim, c.nume);
+
+	if (h.vector[cod] == NULL) {
+		h.vector[cod] = (Nod*)malloc(sizeof(Nod));
+		h.vector[cod]->info = c;
+		h.vector[cod]->next = NULL;
+	}
+	else {
+		inserareInLista(h.vector[cod], c);
+	}
+}
