@@ -108,4 +108,10 @@ void adaugaAnimalInArbore(Nod** rad, Animal aNou) {
 		rotireLaStanga(rad);
 	}
 }
-
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareAnimal(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
