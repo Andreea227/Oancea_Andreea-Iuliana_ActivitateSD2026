@@ -131,3 +131,16 @@ float calculeazaGreutateTotala(Nod* rad) {
 	}
 	return 0;
 }
+
+float calculeazaGreutatePeHrana(Nod* rad, char tip) {
+	if (rad) {
+		float s = calculeazaGreutatePeHrana(rad->st, tip)
+			+ calculeazaGreutatePeHrana(rad->dr, tip);
+
+		if (rad->info.tipHrana == tip)
+			s += rad->info.greutate;
+
+		return s;
+	}
+	return 0;
+}
