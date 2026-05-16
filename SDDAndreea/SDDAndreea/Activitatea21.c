@@ -74,3 +74,17 @@ void adaugaTaraInArbore(Nod** rad, Tara taraNoua) {
 		}
 	}
 }
+Nod* citireArboreDeTariDinFisier(const char* numeFisier) {
+	Nod* rad = NULL;
+	FILE* f = fopen(numeFisier, "r");
+
+	if (f) {
+		while (!feof(f)) {
+			Tara t = citireTaraDinFisier(f);
+			adaugaTaraInArbore(&rad, t);
+		}
+	}
+	fclose(f);
+
+	return rad;
+}
