@@ -149,3 +149,22 @@ void dezalocareArbore(Nod** rad) {
 		*rad = NULL;
 	}
 }
+int main() {
+	Nod* rad = NULL;
+
+	adaugaIngredientInArbore(&rad, initIngredient(1, 10, 5.5, "Faina", "kg", 'F'));
+	adaugaIngredientInArbore(&rad, initIngredient(2, 20, 3.0, "Zahar", "kg", 'Z'));
+	adaugaIngredientInArbore(&rad, initIngredient(3, 5, 12.0, "Ulei", "l", 'U'));
+	adaugaIngredientInArbore(&rad, initIngredient(4, 8, 2.5, "Sare", "kg", 'S'));
+	adaugaIngredientInArbore(&rad, initIngredient(5, 15, 4.0, "Oua", "buc", 'O'));
+
+	afisarePreordine(rad);
+
+	printf("Numar ingrediente: %d\n", determinaNumarNoduri(rad));
+	printf("Pret total: %.2f\n", calculeazaPretTotal(rad));
+	printf("Valoare stoc: %.2f\n", calculeazaValoareStoc(rad));
+
+	dezalocareArbore(&rad);
+
+	return 0;
+}
