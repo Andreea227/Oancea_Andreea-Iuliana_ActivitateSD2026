@@ -106,3 +106,10 @@ void adaugaMembruInArbore(Nod** rad, Membru mNou) {
 		rotireLaStanga(rad);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareMembru(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
