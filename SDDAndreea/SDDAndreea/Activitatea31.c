@@ -106,3 +106,10 @@ void adaugaIngredientInArbore(Nod** rad, Ingredient iNou) {
 		rotireLaStanga(rad);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareIngredient(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
