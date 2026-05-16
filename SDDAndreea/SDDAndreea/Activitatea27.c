@@ -99,3 +99,8 @@ Heap citireHeapZboruriDinFisier(const char* numeFisier) {
 
 	return h;
 }
+void afisareHeap(Heap h) {
+	for (int i = 0; i < h.nrElemente; i++) {
+		afisareZbor(h.zboruri[i]);
+	}
+}
