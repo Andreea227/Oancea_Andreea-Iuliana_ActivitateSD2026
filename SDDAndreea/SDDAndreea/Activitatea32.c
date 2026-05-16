@@ -129,3 +129,11 @@ float calculeazaTotalAbonamente(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaValoareSala(Nod* rad) {
+	if (rad) {
+		return rad->info.abonament * 12
+			+ calculeazaValoareSala(rad->st)
+			+ calculeazaValoareSala(rad->dr);
+	}
+	return 0;
+}
