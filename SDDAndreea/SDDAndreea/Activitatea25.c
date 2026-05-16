@@ -28,3 +28,21 @@ void afisareCamera(Camera c) {
 	printf("Hotel: %s\n", c.hotel);
 	printf("Etaj: %c\n\n", c.etaj);
 }
+
+Camera initCamera(int id, int paturi, float pret,
+	const char* tip, const char* hotel, unsigned char etaj) {
+
+	Camera c;
+	c.id = id;
+	c.nrPaturi = paturi;
+	c.pretNoapte = pret;
+	c.etaj = etaj;
+
+	c.tipCamera = malloc(strlen(tip) + 1);
+	strcpy(c.tipCamera, tip);
+
+	c.hotel = malloc(strlen(hotel) + 1);
+	strcpy(c.hotel, hotel);
+
+	return c;
+}
