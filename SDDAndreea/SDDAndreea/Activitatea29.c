@@ -130,3 +130,11 @@ float calculeazaSoldTotal(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaValoareDobanda(Nod* rad) {
+	if (rad) {
+		return (rad->info.sold + rad->info.sold * rad->info.dobanda)
+			+ calculeazaValoareDobanda(rad->st)
+			+ calculeazaValoareDobanda(rad->dr);
+	}
+	return 0;
+}
