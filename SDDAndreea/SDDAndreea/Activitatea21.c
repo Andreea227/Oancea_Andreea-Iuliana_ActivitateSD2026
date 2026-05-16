@@ -161,3 +161,11 @@ int calculeazaInaltimeArbore(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaPIBTotal(Nod* rad) {
+	if (rad) {
+		return rad->info.pib +
+			calculeazaPIBTotal(rad->st) +
+			calculeazaPIBTotal(rad->dr);
+	}
+	return 0;
+}
