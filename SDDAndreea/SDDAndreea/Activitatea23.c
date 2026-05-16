@@ -141,3 +141,14 @@ float calculeazaPretPeAutor(Nod* rad, const char* autor) {
 	}
 	return 0;
 }
+void dezalocareArbore(Nod** rad) {
+	if (*rad) {
+		dezalocareArbore(&(*rad)->st);
+		dezalocareArbore(&(*rad)->dr);
+
+		free((*rad)->info.titlu);
+		free((*rad)->info.autor);
+		free(*rad);
+		*rad = NULL;
+	}
+}
