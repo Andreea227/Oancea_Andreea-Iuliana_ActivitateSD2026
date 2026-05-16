@@ -77,3 +77,19 @@ void rotireLaDreapta(Nod** rad) {
 	aux->dr = (*rad);
 	(*rad) = aux;
 }
+void adaugaIngredientInArbore(Nod** rad, Ingredient iNou) {
+	if (*rad == NULL) {
+		Nod* nod = malloc(sizeof(Nod));
+		nod->info = iNou;
+		nod->st = NULL;
+		nod->dr = NULL;
+		*rad = nod;
+	}
+	else {
+		if (iNou.id < (*rad)->info.id)
+			adaugaIngredientInArbore(&(*rad)->st, iNou);
+		else if (iNou.id > (*rad)->info.id)
+			adaugaIngredientInArbore(&(*rad)->dr, iNou);
+	}
+
+	int dif = calculDiferentaInaltimi(*rad);
