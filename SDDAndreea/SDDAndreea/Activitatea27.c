@@ -62,3 +62,23 @@ Heap initializareHeap(int capacitate) {
 	h.nrElemente = 0;
 	return h;
 }
+void filtreazaHeap(Heap heap, int poz) {
+	int st = 2 * poz + 1;
+	int dr = 2 * poz + 2;
+	int min = poz;
+
+	if (st < heap.nrElemente && heap.zboruri[st].intarziere < heap.zboruri[min].intarziere)
+		min = st;
+
+	if (dr < heap.nrElemente && heap.zboruri[dr].intarziere < heap.zboruri[min].intarziere)
+		min = dr;
+
+	if (min != poz) {
+		Zbor aux = heap.zboruri[min];
+		heap.zboruri[min] = heap.zboruri[poz];
+		heap.zboruri[poz] = aux;
+
+		if (min < (heap.nrElemente - 2) / 2)
+			filtreazaHeap(heap, min);
+	}
+}
