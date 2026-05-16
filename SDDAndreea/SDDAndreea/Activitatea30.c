@@ -75,3 +75,9 @@ void afisareLista(Nod* cap) {
 		cap = cap->next;
 	}
 }
+void afisareTabela(HashTable h) {
+	for (int i = 0; i < h.dim; i++) {
+		printf("\nPozitia %d:\n", i);
+		afisareLista(h.vector[i]);
+	}
+}
