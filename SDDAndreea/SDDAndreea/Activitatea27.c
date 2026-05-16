@@ -46,3 +46,11 @@ Zbor citireZborDinFisier(FILE* file) {
 
 	return z;
 }
+void afisareZbor(Zbor z) {
+	printf("Id: %d\n", z.id);
+	printf("Durata: %d\n", z.durata);
+	printf("Intarziere: %.2f\n", z.intarziere);
+	printf("Destinatie: %s\n", z.destinatie);
+	printf("Companie: %s\n", z.companie);
+	printf("Terminal: %c\n\n", z.terminal);
+}
