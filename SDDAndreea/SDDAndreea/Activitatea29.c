@@ -28,3 +28,20 @@ void afisareCont(Cont c) {
 	printf("Tip cont: %s\n", c.tipCont);
 	printf("Cod: %c\n\n", c.cod);
 }
+Cont initCont(int id, int sold, float dobanda,
+	const char* titular, const char* tipCont, unsigned char cod) {
+
+	Cont c;
+	c.id = id;
+	c.sold = sold;
+	c.dobanda = dobanda;
+	c.cod = cod;
+
+	c.titular = malloc(strlen(titular) + 1);
+	strcpy(c.titular, titular);
+
+	c.tipCont = malloc(strlen(tipCont) + 1);
+	strcpy(c.tipCont, tipCont);
+
+	return c;
+}
