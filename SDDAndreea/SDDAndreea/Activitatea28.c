@@ -103,3 +103,9 @@ void afisareHeap(Heap h) {
 		afisarePrajitura(h.prajituri[i]);
 	}
 }
+void afisareHeapAscuns(Heap h) {
+	for (int i = h.nrElemente; i < h.capacitate; i++) {
+		afisarePrajitura(h.prajituri[i]);
+	}
+}
+
