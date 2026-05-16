@@ -47,3 +47,12 @@ Tara citireTaraDinFisier(FILE* file) {
 
 	return t1;
 }
+
+void afisareTara(Tara tara) {
+	printf("Id: %d\n", tara.id);
+	printf("Populatie: %d\n", tara.populatie);
+	printf("PIB: %.2f\n", tara.pib);
+	printf("Nume tara: %s\n", tara.numeTara);
+	printf("Capitala: %s\n", tara.capitala);
+	printf("Continent: %c\n\n", tara.continent);
+}
