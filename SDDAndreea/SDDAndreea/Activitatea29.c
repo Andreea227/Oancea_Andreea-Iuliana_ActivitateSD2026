@@ -122,3 +122,11 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaSoldTotal(Nod* rad) {
+	if (rad) {
+		return rad->info.sold
+			+ calculeazaSoldTotal(rad->st)
+			+ calculeazaSoldTotal(rad->dr);
+	}
+	return 0;
+}
