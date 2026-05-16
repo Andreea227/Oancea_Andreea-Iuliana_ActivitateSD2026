@@ -65,3 +65,10 @@ int calculDiferentaInaltimi(Nod* rad) {
 	}
 	return 0;
 }
+
+void rotireLaStanga(Nod** rad) {
+	Nod* aux = (*rad)->dr;
+	(*rad)->dr = aux->st;
+	aux->st = (*rad);
+	(*rad) = aux;
+}
