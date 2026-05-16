@@ -73,3 +73,9 @@ void rotireLaStanga(Nod** rad) {
 	aux->st = (*rad);
 	(*rad) = aux;
 }
+void rotireLaDreapta(Nod** rad) {
+	Nod* aux = (*rad)->st;
+	(*rad)->st = aux->dr;
+	aux->dr = (*rad);
+	(*rad) = aux;
+}
