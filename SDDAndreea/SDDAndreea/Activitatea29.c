@@ -107,3 +107,10 @@ void adaugaContInArbore(Nod** rad, Cont cNou) {
 		rotireLaStanga(rad);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareCont(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
