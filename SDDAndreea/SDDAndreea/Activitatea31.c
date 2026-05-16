@@ -19,3 +19,12 @@ struct Nod {
 	struct Nod* dr;
 };
 typedef struct Nod Nod;
+
+void afisareIngredient(Ingredient i) {
+	printf("Id: %d\n", i.id);
+	printf("Cantitate: %d\n", i.cantitate);
+	printf("Pret: %.2f\n", i.pret);
+	printf("Nume: %s\n", i.nume);
+	printf("Unitate: %s\n", i.unitate);
+	printf("Cod: %c\n\n", i.cod);
+}
