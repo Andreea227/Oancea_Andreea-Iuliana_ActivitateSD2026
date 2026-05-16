@@ -123,3 +123,11 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaPretTotal(Nod* rad) {
+	if (rad) {
+		return rad->info.pretNoapte
+			+ calculeazaPretTotal(rad->st)
+			+ calculeazaPretTotal(rad->dr);
+	}
+	return 0;
+}
