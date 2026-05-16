@@ -148,3 +148,16 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+int maxim(int a, int b) {
+	return (a > b ? a : b);
+}
+
+int calculeazaInaltimeArbore(Nod* rad) {
+	if (rad) {
+		return maxim(
+			calculeazaInaltimeArbore(rad->st),
+			calculeazaInaltimeArbore(rad->dr)
+		) + 1;
+	}
+	return 0;
+}
