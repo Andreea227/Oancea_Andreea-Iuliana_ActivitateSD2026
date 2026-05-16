@@ -141,3 +141,21 @@ char* getNextPatientName(Heap h) {
 		return h.pacienti[0].nume;
 	return "";
 }
+int main() {
+
+	Heap h = citireHeapPacientiDinFisier("pacienti.txt");
+	afisareHeap(h);
+
+	printf("Extragere pacienti:\n");
+	afisarePacient(extragePacient(&h));
+	afisarePacient(extragePacient(&h));
+	afisarePacient(extragePacient(&h));
+
+	printf("Heap ramas:\n");
+	afisareHeap(h);
+
+	printf("Urmator pacient: %s\n", getNextPatientName(h));
+
+	dezalocareHeap(&h);
+	return 0;
+}
