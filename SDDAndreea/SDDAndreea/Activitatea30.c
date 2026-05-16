@@ -29,3 +29,7 @@ struct HashTable {
 	Nod** vector;
 	int dim;
 };
+
+int functieHash(int dim, const char* nume) {
+	return strlen(nume) % dim;
+}
