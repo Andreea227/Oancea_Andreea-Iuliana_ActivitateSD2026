@@ -125,3 +125,14 @@ Prajitura extragePrajitura(Heap* h) {
 	}
 	return p;
 }
+void dezalocareHeap(Heap* h) {
+	for (int i = 0; i < h->capacitate; i++) {
+		free(h->prajituri[i].nume);
+		free(h->prajituri[i].cofetarie);
+	}
+	free(h->prajituri);
+
+	h->prajituri = NULL;
+	h->capacitate = 0;
+	h->nrElemente = 0;
+}
