@@ -121,3 +121,11 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaTotalAbonamente(Nod* rad) {
+	if (rad) {
+		return rad->info.abonament
+			+ calculeazaTotalAbonamente(rad->st)
+			+ calculeazaTotalAbonamente(rad->dr);
+	}
+	return 0;
+}
