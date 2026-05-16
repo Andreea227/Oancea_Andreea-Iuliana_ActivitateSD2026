@@ -1,0 +1,5 @@
+1,120,15.5,Paris,AirFrance,A
+2,90,3.2,Roma,WizzAir,B
+3,180,25.0,Londra,BritishAirways,A
+4,60,1.0,Viena,AustriaAir,C
+5,200,30.5,Tokyo,JAL,A
