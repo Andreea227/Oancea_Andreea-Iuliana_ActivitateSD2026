@@ -129,3 +129,15 @@ float calculeazaPretTotal(Nod* rad) {
 	}
 	return 0;
 }
+float calculeazaPretPeAutor(Nod* rad, const char* autor) {
+	if (rad) {
+		float s = calculeazaPretPeAutor(rad->st, autor)
+			+ calculeazaPretPeAutor(rad->dr, autor);
+
+		if (strcmp(rad->info.autor, autor) == 0)
+			s += rad->info.pret;
+
+		return s;
+	}
+	return 0;
+}
