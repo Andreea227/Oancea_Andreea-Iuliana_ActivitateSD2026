@@ -140,3 +140,11 @@ Tara getTaraByID(Nod* rad, int id) {
 
 	return t;
 }
+int determinaNumarNoduri(Nod* rad) {
+	if (rad) {
+		return determinaNumarNoduri(rad->st)
+			+ determinaNumarNoduri(rad->dr)
+			+ 1;
+	}
+	return 0;
+}
