@@ -81,3 +81,20 @@ void filtreazaHeap(Heap heap, int poz) {
 			filtreazaHeap(heap, min);
 	}
 }
+Heap citireHeapPacientiDinFisier(const char* numeFisier) {
+	Heap h = initializareHeap(10);
+	FILE* f = fopen(numeFisier, "r");
+
+	if (f) {
+		while (!feof(f)) {
+			h.pacienti[h.nrElemente++] = citirePacientDinFisier(f);
+		}
+	}
+	fclose(f);
+
+	for (int i = (h.nrElemente - 2) / 2; i >= 0; i--) {
+		filtreazaHeap(h, i);
+	}
+
+	return h;
+}
