@@ -108,3 +108,10 @@ void adaugaCameraInArbore(Nod** rad, Camera cNou) {
 		rotireLaStanga(rad);
 	}
 }
+void afisarePreordine(Nod* rad) {
+	if (rad) {
+		afisareCamera(rad->info);
+		afisarePreordine(rad->st);
+		afisarePreordine(rad->dr);
+	}
+}
