@@ -54,3 +54,10 @@ void afisarePrajitura(Prajitura p) {
 	printf("Cofetarie: %s\n", p.cofetarie);
 	printf("Tip: %c\n\n", p.tip);
 }
+Heap initializareHeap(int capacitate) {
+	Heap h;
+	h.capacitate = capacitate;
+	h.prajituri = malloc(sizeof(Prajitura) * capacitate);
+	h.nrElemente = 0;
+	return h;
+}
