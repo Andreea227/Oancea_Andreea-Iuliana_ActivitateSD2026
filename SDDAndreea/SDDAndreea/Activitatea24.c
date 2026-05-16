@@ -19,3 +19,12 @@ struct Nod {
 	struct Nod* dr;
 };
 typedef struct Nod Nod;
+
+void afisareObiect(ObiectMarin o) {
+	printf("Id: %d\n", o.id);
+	printf("Capacitate: %d\n", o.capacitate);
+	printf("Lungime: %.2f\n", o.lungime);
+	printf("Nume: %s\n", o.nume);
+	printf("Tip: %s\n", o.tip);
+	printf("Steag: %c\n\n", o.steag);
+}
