@@ -96,3 +96,19 @@ Cinema cautaCinemaDupaNume(HashTable h, const char* nume) {
 		return creareCinema("N/A", 0);
 	}
 }
+void main() {
+	HashTable ht = creareTabela(5);
+
+	inserareCinemaInTabela(creareCinema("Cinema City", 8), ht);
+	inserareCinemaInTabela(creareCinema("Movieplex", 6), ht);
+	inserareCinemaInTabela(creareCinema("Gloria", 3), ht);
+	inserareCinemaInTabela(creareCinema("Scala", 4), ht);
+	inserareCinemaInTabela(creareCinema("Union", 5), ht);
+	inserareCinemaInTabela(creareCinema("Hollywood", 7), ht);
+
+	afisareTabela(ht);
+
+	Cinema c = cautaCinemaDupaNume(ht, "Union");
+	printf("\nCinema cautat:\n");
+	afisareCinema(c);
+}
