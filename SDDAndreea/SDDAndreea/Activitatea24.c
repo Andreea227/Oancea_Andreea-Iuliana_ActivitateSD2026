@@ -121,3 +121,11 @@ int determinaNumarNoduri(Nod* rad) {
 	}
 	return 0;
 }
+int calculeazaCapacitateTotala(Nod* rad) {
+	if (rad) {
+		return rad->info.capacitate
+			+ calculeazaCapacitateTotala(rad->st)
+			+ calculeazaCapacitateTotala(rad->dr);
+	}
+	return 0;
+}
