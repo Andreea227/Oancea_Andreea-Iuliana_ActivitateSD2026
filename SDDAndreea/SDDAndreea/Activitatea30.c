@@ -65,3 +65,7 @@ void inserareCinemaInTabela(Cinema c, HashTable h) {
 		inserareInLista(h.vector[cod], c);
 	}
 }
+void afisareCinema(Cinema c) {
+	printf("Cinema %s are %d sali\n", c.nume, c.nrSali);
+}
+
