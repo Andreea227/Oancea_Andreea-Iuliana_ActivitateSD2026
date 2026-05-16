@@ -28,3 +28,20 @@ void afisareCarte(Carte c) {
 	printf("Autor: %s\n", c.autor);
 	printf("Gen: %c\n\n", c.gen);
 }
+Carte initCarte(int id, int an, float pret,
+	const char* titlu, const char* autor, unsigned char gen) {
+
+	Carte c;
+	c.id = id;
+	c.anAparitie = an;
+	c.pret = pret;
+	c.gen = gen;
+
+	c.titlu = malloc(strlen(titlu) + 1);
+	strcpy(c.titlu, titlu);
+
+	c.autor = malloc(strlen(autor) + 1);
+	strcpy(c.autor, autor);
+
+	return c;
+}
