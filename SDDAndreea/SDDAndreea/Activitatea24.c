@@ -99,3 +99,10 @@ void adaugaObiectInArbore(Nod** rad, ObiectMarin oNou) {
 
 		rotireLaDreapta(rad);
 	}
+	if (dif == -2) {
+		if (calculDiferentaInaltimi((*rad)->dr) == 1)
+			rotireLaDreapta(&(*rad)->dr);
+
+		rotireLaStanga(rad);
+	}
+}
