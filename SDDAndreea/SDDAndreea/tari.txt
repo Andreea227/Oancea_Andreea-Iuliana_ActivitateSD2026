@@ -1,0 +1,5 @@
+1,19000000,300.5,Romania,Bucuresti,E
+2,83000000,4500.2,Germania,Berlin,E
+3,68000000,2800.1,Franta,Paris,E
+4,1400000000,17000.0,China,Beijing,A
+5,330000000,26000.3,USA,Washington,A
