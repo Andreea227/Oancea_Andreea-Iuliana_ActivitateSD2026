@@ -1,0 +1,5 @@
+1,300,15.5,Cheesecake,DulceCasa,A
+2,450,22.0,Ecler,LaMirela,B
+3,250,10.0,Brownie,SweetShop,A
+4,500,25.5,Tiramisu,Deliciu,C
+5,350,18.0,Macaron,ParisBakery,B
