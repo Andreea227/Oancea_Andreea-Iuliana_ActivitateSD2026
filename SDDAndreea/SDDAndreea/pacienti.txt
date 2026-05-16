@@ -1,0 +1,5 @@
+1,45,3.2,Ion,Pneumonie,A
+2,60,8.5,Maria,Infarct,B
+3,30,2.1,Andrei,Fractura,A
+4,70,9.0,Elena,AVC,B
+5,25,1.5,George,Febra,C
