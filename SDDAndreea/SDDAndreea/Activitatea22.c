@@ -28,3 +28,20 @@ void afisareAnimal(Animal a) {
 	printf("Nume: %s\n", a.nume);
 	printf("Tip hrana: %c\n\n", a.tipHrana);
 }
+Animal initAnimal(int id, int varsta, float greutate,
+	const char* specie, const char* nume, unsigned char tipHrana) {
+
+	Animal a;
+	a.id = id;
+	a.varsta = varsta;
+	a.greutate = greutate;
+	a.tipHrana = tipHrana;
+
+	a.specie = malloc(strlen(specie) + 1);
+	strcpy(a.specie, specie);
+
+	a.nume = malloc(strlen(nume) + 1);
+	strcpy(a.nume, nume);
+
+	return a;
+}
